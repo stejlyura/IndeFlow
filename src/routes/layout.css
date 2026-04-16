@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-bg-body: var(--bg-body);
+  --color-bg-card: var(--bg-card);
+  --color-bg-accent: var(--bg-accent);
+  --color-text-accent: var(--text-accent);
+  --color-text-main: var(--text-main);
+  --color-border-color: var(--border-color);
+  --font-head: var(--font-head);
+  --font-body: var(--font-body);
+}
+
+/* 1. Liquid Glass (Apple Premium) - ТЕМА ПО УМОЛЧАНИЮ */
+:root {
+    --primary: #0071e3;          
+    --secondary: #f5f5f7;        
+    --bg-body: #fbfbfd;          
+    --bg-card: rgba(255, 255, 255, 0.7); 
+    --bg-accent: #000000;        
+    --text-accent: #ffffff;      
+    --text-main: #1d1d1f;        
+    --border-color: rgba(0, 0, 0, 0.1); 
+    --font-head: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --glass: blur(20px);         
+}
+
+/* 2. Heritage Gold */
+[data-theme="heritage"] {
+    --primary: #c5a059;          
+    --secondary: #1a1a1a;        
+    --bg-body: #0a0a0a;          
+    --bg-card: #111111;          
+    --bg-accent: #c5a059;        
+    --text-accent: #000000;      
+    --text-main: #ffffff;        
+    --border-color: #2a2a2a;     
+    --font-head: 'Playfair Display', serif; 
+    --glass: none;               
+}
+
+/* 3. Berry Mint */
+[data-theme="berry"] {
+    --primary: #20c997;          
+    --secondary: #4c3398;        
+    --bg-body: #ffffff;          
+    --bg-card: #f8f9fa;          
+    --bg-accent: #4c3398;        
+    --text-accent: #20c997;      
+    --text-main: #1d1135;        
+    --border-color: #e2e8f0;     
+    --font-head: 'Inter', sans-serif;
+    --glass: none;
+}
+
+/* 4. Aero Mercedes */
+[data-theme="mercedes"] {
+    --primary: #00fffc;          
+    --secondary: #111111;        
+    --bg-body: #050505;          
+    --bg-card: #0d0d0d;          
+    --bg-accent: #00fffc;        
+    --text-accent: #000000;      
+    --text-main: #ffffff;        
+    --border-color: #1a1a1a;     
+    --font-head: 'Inter', sans-serif;
+    --glass: none;
+}
+
+/* 5. Blueprint */
+[data-theme="wordpress"] {
+    --primary: #2271b1;          
+    --secondary: #f0f0f1;        
+    --bg-body: #f0f0f1;          
+    --bg-card: #ffffff;          
+    --bg-accent: #2c3338;        
+    --text-accent: #ffffff;      
+    --text-main: #2c3338;        
+    --border-color: #2c3338;     
+    --font-head: 'Inter', sans-serif;
+    --glass: none;
+}
+
+@layer base {
+    body {
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        font-family: var(--font-body);
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    h1, h2, h3, h4, h5, h6 { 
+        font-family: var(--font-head); 
+    }
+}
+
+@layer components {
+    .glass-effect {
+        backdrop-filter: var(--glass);
+        -webkit-backdrop-filter: var(--glass);
+    }
+
+    .bg-accent-section {
+        background-color: var(--bg-accent);
+        color: var(--text-accent);
+    }
+
+    .sharp {
+        border-radius: 0px !important;
+    }
+
+    .btn-premium {
+        background-color: var(--primary);
+        color: #fff;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 2rem;
+    }
+
+    .btn-premium:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+        box-shadow: 0 10px 20px -5px var(--primary);
+    }
+
+    [data-theme="heritage"] .btn-premium, 
+    [data-theme="mercedes"] .btn-premium { 
+        color: #000; 
+    }
+
+    [data-theme="berry"] .btn-premium { 
+        background-color: var(--secondary); 
+        color: white; 
+    }
+
+    .input-premium {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--border-color);
+        padding: 0.75rem 0;
+        outline: none;
+        transition: border-color 0.3s;
+        color: inherit;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    .input-premium:focus { 
+        border-color: var(--primary); 
+    }
+
+    .disclaimer-box {
+        background-color: #fff1f1;
+        border: 1px solid #ffb4b4;
+        border-radius: 20px;
+        color: #cc0000;
+        padding: 1rem;
+    }
+
+    [data-theme="heritage"] .disclaimer-box, 
+    [data-theme="mercedes"] .disclaimer-box,
+    [data-theme="berry"] .disclaimer-box {
+        background-color: rgba(255, 0, 0, 0.05);
+        border-color: rgba(255, 0, 0, 0.3);
+        color: #ff8080;
+    }
+
+    .reveal {
+        animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+    }
+
+    @keyframes reveal-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}

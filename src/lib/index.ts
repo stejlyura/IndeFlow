@@ -1,0 +1,14 @@
+// Exporting all UI components
+export { default as Header } from './components/Header.svelte';
+export { default as Footer } from './components/Footer.svelte';
+export { default as Hero } from './components/Hero.svelte';
+export { default as Workflow } from './components/Workflow.svelte';
+export { default as Expertise } from './components/Expertise.svelte';
+export { default as Seo } from './components/Seo.svelte';
+export { default as About } from './components/About.svelte';
+export { default as ServicesExt } from './components/ServicesExt.svelte';
+export { default as Cta } from './components/Cta.svelte';
+export { default as LogoCloud } from './components/LogoCloud.svelte';
+export { default as Stats } from './components/Stats.svelte';
+export { default as Pricing } from './components/Pricing.svelte';
+export { default as CallbackForm } from './components/CallbackForm.svelte';

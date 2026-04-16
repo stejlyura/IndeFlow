@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="%paraglide.lang%" dir="%paraglide.dir%">
+	<head>
+		<meta charset="utf-8" />
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+
+		<meta name="text-scale" content="scale" />
+
+		<!-- Partytown setup for Zero-JS analytics -->
+		<script>
+			partytown = {
+				forward: ['dataLayer.push', 'gtag']
+			};
+		</script>
+		<script type="text/javascript" src="/~partytown/partytown.js"></script>
+
+		<!-- Google Analytics (Partytown) Placeholder -->
+		<script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-XXXXXXXXXX');
+		</script>
+
+		<!-- Google AdSense (Partytown) Placeholder -->
+		<script type="text/partytown" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+		%sveltekit.head%
+	</head>
+
+	<body data-sveltekit-preload-data="hover"><div style="display: contents">%sveltekit.body%</div></body>
+</html>

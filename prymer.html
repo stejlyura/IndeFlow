@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth" data-theme="berry">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IndexFlow | Digital Production & SEO Architecture</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ДИЗАЙН-СИСТЕМА ТЕМ */
+        :root {
+            /* Liquid Glass (Apple Premium) */
+            --primary: #0071e3;
+            --secondary: #f5f5f7;
+            --bg-body: #fbfbfd;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-accent: #000000;
+            --text-accent: #ffffff;
+            --text-main: #1d1d1f;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --font-head: 'Inter', sans-serif;
+            --glass: blur(20px);
+        }
+
+        [data-theme="heritage"] {
+            /* Heritage Gold (Rolex / Jack Daniels) */
+            --primary: #c5a059;
+            --secondary: #1a1a1a;
+            --bg-body: #0a0a0a;
+            --bg-card: #111111;
+            --bg-accent: #c5a059;
+            --text-accent: #000000;
+            --text-main: #ffffff;
+            --border-color: #2a2a2a;
+            --font-head: 'Playfair Display', serif;
+            --glass: none;
+        }
+
+        [data-theme="berry"] {
+            /* Berry Mint (Blueberry & Mint) */
+            --primary: #20c997; /* Свежая мята */
+            --secondary: #4c3398; /* Мякоть голубики */
+            --bg-body: #ffffff;
+            --bg-card: #f8f9fa;
+            --bg-accent: #4c3398; /* Акцентный блок - голубика */
+            --text-accent: #20c997; /* Текст в акценте - мята */
+            --text-main: #1d1135;
+            --border-color: #e2e8f0;
+            --font-head: 'Inter', sans-serif;
+            --glass: none;
+        }
+
+        [data-theme="mercedes"] {
+            /* Aero Mercedes (Techno Cyan) */
+            --primary: #00fffc;
+            --secondary: #111111;
+            --bg-body: #050505;
+            --bg-card: #0d0d0d;
+            --bg-accent: #00fffc;
+            --text-accent: #000000;
+            --text-main: #ffffff;
+            --border-color: #1a1a1a;
+            --font-head: 'Inter', sans-serif;
+            --glass: none;
+        }
+
+        [data-theme="wordpress"] {
+            /* Blueprint (WP Borders) */
+            --primary: #2271b1;
+            --secondary: #f0f0f1;
+            --bg-body: #f0f0f1;
+            --bg-card: #ffffff;
+            --bg-accent: #2c3338;
+            --text-accent: #ffffff;
+            --text-main: #2c3338;
+            --border-color: #2c3338;
+            --font-head: 'Inter', sans-serif;
+            --glass: none;
+        }
+
+        /* ГЛОБАЛЬНЫЕ ПРАВИЛА */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        h1, h2, h3, h4 { font-family: var(--font-head); }
+        .sharp { border-radius: 0px !important; }
+
+        /* БЛОК ПРЕДУПРЕЖДЕНИЯ (Мягкие формы) */
+        .disclaimer-box {
+            background-color: #fff1f1;
+            border: 1px solid #ffb4b4;
+            border-radius: 20px;
+            color: #cc0000;
+        }
+        [data-theme="heritage"] .disclaimer-box, 
+        [data-theme="mercedes"] .disclaimer-box,
+        [data-theme="berry"] .disclaimer-box {
+            background-color: rgba(255, 0, 0, 0.05);
+            border-color: rgba(255, 0, 0, 0.3);
+            color: #ff8080;
+        }
+
+        /* АКЦЕНТНЫЕ СЕКЦИИ */
+        .bg-accent-section {
+            background-color: var(--bg-accent);
+            color: var(--text-accent);
+        }
+
+        /* КНОПКИ */
+        .btn-premium {
+            background-color: var(--primary);
+            color: #fff;
+            @apply font-black uppercase tracking-widest transition-all duration-300 inline-flex items-center justify-center;
+        }
+        [data-theme="heritage"] .btn-premium, [data-theme="mercedes"] .btn-premium { color: #000; }
+        [data-theme="berry"] .btn-premium { background-color: var(--secondary); color: white; }
+        .btn-premium:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 10px 20px -5px var(--primary); }
+
+        /* ИНПУТЫ */
+        .input-premium {
+            background: transparent;
+            border-bottom: 2px solid var(--border-color);
+            @apply py-3 outline-none transition-colors duration-300 text-xs font-bold uppercase;
+        }
+        .input-premium:focus { border-color: var(--primary); }
+
+        /* ЖЕЛЕЗОБЕТОННЫЙ WORKFLOW */
+        .wf-wrap { position: relative; max-width: 900px; margin: 0 auto; padding: 20px 0; }
+        .wf-line { position: absolute; left: 23px; top: 0; bottom: 0; width: 2px; background-color: var(--border-color); z-index: 1; }
+        .wf-step { position: relative; z-index: 2; padding-left: 80px; margin-bottom: 4rem; min-height: 48px; }
+        .wf-dot { position: absolute; left: 0; top: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background-color: var(--primary); font-size: 1.25rem; font-weight: 900; color: #000; }
+        [data-theme="berry"] .wf-dot { background-color: var(--secondary); color: white; }
+        [data-theme="apple"] .wf-dot, [data-theme="wordpress"] .wf-dot { color: white; }
+
+        @media (min-width: 768px) {
+            .wf-line { left: 50%; transform: translateX(-50%); }
+            .wf-step { padding-left: 0; margin-bottom: 8rem; display: flex; align-items: center; }
+            .wf-dot { left: 50%; transform: translateX(-50%); }
+            .wf-content { width: 45%; }
+            .wf-step:nth-child(odd) { justify-content: flex-start; }
+            .wf-step:nth-child(even) { justify-content: flex-end; }
+            .wf-step:nth-child(odd) .wf-content { text-align: right; }
+            .wf-step:nth-child(even) .wf-content { text-align: left; }
+        }
+
+        /* АНИМАЦИИ БЕЗ JS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes reveal-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LOGO SCROLL */
+        .logo-scroll {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 5)); }
+        }
+
+        /* ТАБЛИЦЫ */
+        .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-[120] border-b backdrop-blur-md bg-opacity-90" style="background-color: var(--bg-card); border-color: var(--border-color);">
+        <div class="container mx-auto px-4 md:px-8 h-16 md:h-24 flex items-center justify-between">
+            <div class="text-xl md:text-2xl font-black tracking-tighter uppercase italic">
+                INDEX<span style="color: var(--primary);">FLOW</span>
+            </div>
+            <div class="flex items-center space-x-3 md:space-x-6">
+                <select id="themeSelector" onchange="setTheme(this.value)" class="bg-transparent border border-zinc-400 px-3 py-1.5 text-[9px] md:text-xs font-bold uppercase tracking-widest sharp outline-none cursor-pointer">
+                    <option value="berry">Berry Mint (Pulp)</option>
+                    <option value="apple">Liquid Glass (Apple)</option>
+                    <option value="heritage">Heritage (Rolex)</option>
+                    <option value="mercedes">Aero Mercedes</option>
+                    <option value="wordpress">Blueprint (WP)</option>
+                </select>
+                <button class="hidden sm:block btn-premium px-6 py-2.5 text-[9px] md:text-[10px] sharp">Контакт</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 md:pt-60 md:pb-32 px-4 md:px-8 reveal">
+        <div class="container mx-auto">
+            <div class="max-w-5xl">
+                <h1 class="text-5xl md:text-7xl lg:text-[120px] font-black leading-[0.85] mb-8 md:mb-12 tracking-tighter uppercase">
+                    Цифровой <br> <span style="color: var(--primary);">Поток</span>
+                </h1>
+                <p class="max-w-2xl opacity-75 mb-10 md:mb-16 text-lg md:text-2xl font-light leading-relaxed">
+                    IndexFlow проектирует архитектуру, которую Google признает эталонной. Масштабируйте свой бизнес через глубокую органическую индексацию.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                    <button class="btn-premium px-12 py-5 sharp text-[10px] md:text-xs italic">Запустить проект</button>
+                    <button class="border px-12 py-5 sharp text-[10px] md:text-xs uppercase tracking-widest hover:invert transition" style="border-color: var(--border-color);">Портфолио</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Cloud -->
+    <section class="py-12 border-y border-zinc-100 overflow-hidden reveal" style="animation-delay: 0.1s;">
+        <div class="logo-scroll space-x-20 flex items-center">
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">TECH CORP</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">FINANCE HUB</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">GLOBAL MEDIA</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">LUXURY REALTY</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">CRYPTO FLOW</div>
+            <!-- Repeat -->
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">TECH CORP</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">FINANCE HUB</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">GLOBAL MEDIA</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">LUXURY REALTY</div>
+            <div class="text-2xl font-black opacity-10 uppercase italic w-[250px]">CRYPTO FLOW</div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 px-4 md:px-8 reveal" style="animation-delay: 0.2s;">
+        <div class="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-8 border-l-4" style="border-color: var(--primary); background-color: var(--bg-card);">
+                <div class="text-4xl md:text-6xl font-black mb-2 italic">500+</div>
+                <div class="text-[9px] uppercase font-bold tracking-widest opacity-40">Проектов в индексе</div>
+            </div>
+            <div class="p-8 border-l-4" style="border-color: var(--primary); background-color: var(--bg-card);">
+                <div class="text-4xl md:text-6xl font-black mb-2 italic">98%</div>
+                <div class="text-[9px] uppercase font-bold tracking-widest opacity-40">Success Rate</div>
+            </div>
+            <div class="p-8 border-l-4" style="border-color: var(--primary); background-color: var(--bg-card);">
+                <div class="text-4xl md:text-6xl font-black mb-2 italic">0.4s</div>
+                <div class="text-[9px] uppercase font-bold tracking-widest opacity-40">LCP Speed</div>
+            </div>
+            <div class="p-8 border-l-4" style="border-color: var(--primary); background-color: var(--bg-card);">
+                <div class="text-4xl md:text-6xl font-black mb-2 italic">x4.5</div>
+                <div class="text-[9px] uppercase font-bold tracking-widest opacity-40">Средний ROI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise (Accent Block - Blueberry Pulp in Berry Mint) -->
+    <section class="py-24 px-4 md:px-8 bg-accent-section reveal" style="animation-delay: 0.3s;">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-7xl font-black uppercase italic mb-8 tracking-tighter leading-none">Техническое <br> Доминирование</h2>
+                    <p class="text-lg md:text-xl opacity-80 leading-relaxed mb-12 italic">Мы не используем шаблоны. Каждый проект IndexFlow — это ручная архитектура на чистом коде, гарантирующая отсутствие технического мусора и максимальный приоритет у поисковиков.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold uppercase text-xs mb-3 tracking-widest">SEO Architecture</h4>
+                            <p class="text-xs opacity-60">Проектирование структуры данных под требования самых жестких алгоритмов.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold uppercase text-xs mb-3 tracking-widest">Global Scale</h4>
+                            <p class="text-xs opacity-60">Масштабирование на рынки Tier-1 с учетом локальной специфики индексации.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-square border-4 border-current opacity-20 hidden lg:flex items-center justify-center p-20">
+                     <div class="text-9xl font-black italic">IF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow (Fixed & Reliable) -->
+    <section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card);">
+        <div class="container mx-auto">
+            <h2 class="text-4xl md:text-7xl font-black mb-24 uppercase italic text-center tracking-tighter">Процесс</h2>
+            <div class="wf-wrap">
+                <div class="wf-line"></div>
+                
+                <div class="wf-step">
+                    <div class="wf-dot sharp">1</div>
+                    <div class="wf-content">
+                        <div class="text-[10px] uppercase font-bold opacity-40 mb-2 italic">Этап 01</div>
+                        <h4 class="text-2xl font-bold uppercase mb-4">Анализ и Discovery</h4>
+                        <p class="text-sm opacity-60 italic leading-relaxed">Глубокое исследование ниши и выявление "семантических дыр" у конкурентов. Мы строим карту захвата трафика.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-dot sharp">2</div>
+                    <div class="wf-content">
+                        <div class="text-[10px] uppercase font-bold opacity-40 mb-2 italic">Этап 02</div>
+                        <h4 class="text-2xl font-bold uppercase mb-4">Core Engineering</h4>
+                        <p class="text-sm opacity-60 italic leading-relaxed">Разработка чистого ядра системы. Без плагинов. Настройка кастомной структуры URL и мета-данных для Google.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-dot sharp">3</div>
+                    <div class="wf-content">
+                        <div class="text-[10px] uppercase font-bold opacity-40 mb-2 italic">Этап 03</div>
+                        <h4 class="text-2xl font-bold uppercase mb-4">Deployment & Boost</h4>
+                        <p class="text-sm opacity-60 italic leading-relaxed">Запуск проекта и активация мониторинга индексации. Мы сопровождаем ваш рост до первых значимых результатов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="py-12 px-4 md:px-8 reveal">
+        <div class="container mx-auto max-w-4xl">
+            <div class="disclaimer-box p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center border-2 border-current rounded-full">
+                    <span class="text-3xl font-bold italic">!</span>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold uppercase mb-4 tracking-widest">Прозрачность и Этика</h3>
+                    <p class="text-sm md:text-base opacity-90 leading-relaxed italic font-medium">
+                        IndexFlow не продает «схемы» обхода AdSense. Мы строим качественные сайты, которые Google любит органически. Любые обещания 100% гарантии прохода — это <span class="underline">мошенничество</span>. Наша цель — ваша долгосрочная репутация.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Component Lab -->
+    <section class="py-24 px-4 md:px-8 reveal">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">Лаборатория <br> Компонентов</h2>
+                <div class="flex items-center space-x-3 bg-zinc-100 p-2 sharp border border-zinc-300">
+                    <span class="text-[9px] uppercase font-bold opacity-50 px-2 text-black">Preview Style:</span>
+                    <select onchange="setLocalTheme(this.value)" class="bg-transparent text-[10px] font-bold uppercase tracking-widest outline-none cursor-pointer px-2 text-black">
+                        <option value="berry">Berry Mint</option>
+                        <option value="apple">Apple Glass</option>
+                        <option value="heritage">Heritage Gold</option>
+                        <option value="mercedes">Aero Mercedes</option>
+                        <option value="wordpress">Blueprint</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="uiLab" data-theme="berry" class="border p-8 md:p-20 transition-all duration-500 sharp relative overflow-hidden" style="background-color: var(--bg-body); border-color: var(--border-color); color: var(--text-main);">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 items-start">
+                    <div class="space-y-4">
+                        <p class="text-[9px] uppercase font-bold opacity-40 italic">Action Button</p>
+                        <button class="btn-premium w-full py-5 sharp text-[10px]">Тест Кнопки</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-[9px] uppercase font-bold opacity-40 italic">Premium Input</p>
+                        <input type="text" placeholder="ВАШ ДОМЕН..." class="input-premium w-full text-xs font-bold uppercase tracking-widest">
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-[9px] uppercase font-bold opacity-40 italic">Status Tag</p>
+                        <div class="inline-block px-6 py-2 border-2 text-[9px] font-black uppercase tracking-[0.3em]" style="color: var(--primary); border-color: var(--primary);">Verified Pass</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card);">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-6xl font-black mb-16 uppercase italic text-center tracking-tighter">Сравнение</h2>
+            <div class="table-wrap border border-zinc-200">
+                <table class="w-full min-w-[700px] border-collapse bg-white text-black">
+                    <thead>
+                        <tr class="border-b" style="border-color: var(--border-color);">
+                            <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">Критерий</th>
+                            <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">Рыночное Решение</th>
+                            <th class="py-10 px-8 text-left text-xs font-black uppercase tracking-widest" style="background-color: #f8f9fa;">IndexFlow Engine</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b" style="border-color: var(--border-color);">
+                            <td class="py-10 px-8 font-bold uppercase">Чистота кода (W3C)</td>
+                            <td class="py-10 px-8 opacity-60">Зависимость от плагинов</td>
+                            <td class="py-10 px-8 font-black text-2xl tracking-tighter" style="color: var(--primary);">0 Ошибок / Native</td>
+                        </tr>
+                        <tr class="border-b" style="border-color: var(--border-color);">
+                            <td class="py-10 px-8 font-bold uppercase">SEO Потенциал</td>
+                            <td class="py-10 px-8 opacity-60">Шаблонные теги</td>
+                            <td class="py-10 px-8 font-black text-2xl tracking-tighter" style="color: var(--primary);">Custom Semantic</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 px-4 md:px-8 reveal">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-black mb-20 uppercase tracking-tighter text-center">Прайс-лист</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border" style="border-color: var(--border-color);">
+                <div class="p-10 border-b md:border-b-0 md:border-r" style="border-color: var(--border-color);">
+                    <h3 class="text-xs font-bold uppercase opacity-40 mb-6 italic">Silver Engine</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-10 italic">45,000 ₴</div>
+                    <button class="w-full border p-4 sharp text-[10px] font-bold uppercase hover:bg-black hover:text-white transition" style="border-color: var(--border-color);">Выбрать</button>
+                </div>
+                <div class="p-10 border-b md:border-b-0 md:border-r bg-white/5 relative z-10" style="background-color: var(--bg-card); border-top: 4px solid var(--primary);">
+                    <h3 class="text-xs font-bold uppercase mb-6" style="color: var(--primary);">Business Authority</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-10 italic">105,000 ₴</div>
+                    <button class="w-full btn-premium p-4 sharp text-[10px] font-black">Купить поток</button>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-xs font-bold uppercase opacity-40 mb-6 italic">Platinum Custom</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-10 italic">320,000 ₴</div>
+                    <button class="w-full border p-4 sharp text-[10px] font-bold uppercase hover:bg-black hover:text-white transition" style="border-color: var(--border-color);">VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-4 md:px-8 reveal">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-4xl font-black mb-16 uppercase italic text-center tracking-tighter">Вопросы</h2>
+            <div class="space-y-2">
+                <div class="border-b" style="border-color: var(--border-color);">
+                    <button onclick="toggleFaq(this)" class="w-full py-10 flex justify-between items-center text-left hover:opacity-70 transition">
+                        <span class="text-sm font-bold uppercase tracking-[0.2em]">Почему важна скорость отрисовки?</span>
+                        <span class="text-2xl">→</span>
+                    </button>
+                    <div class="max-h-0 overflow-hidden transition-all duration-300 opacity-60 text-sm">
+                        <p class="pb-10 italic leading-relaxed">Поисковые системы отдают приоритет быстрым сайтам. IndexFlow обеспечивает LCP менее 0.4с, что выводит вас на первые позиции быстрее конкурентов.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Callback Form -->
+    <section class="py-32 px-4 md:px-8 bg-zinc-950 text-white relative reveal">
+        <div class="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-24">
+            <div>
+                <h2 class="text-6xl md:text-[110px] font-black uppercase italic leading-[0.85] mb-12 tracking-tighter">Вход <br> в <br> Поток.</h2>
+                <p class="text-zinc-600 uppercase text-[10px] tracking-[0.5em] mb-16">Каждый успешный проект начинается с одного правильного решения.</p>
+            </div>
+            <div class="bg-zinc-900 p-8 md:p-12 sharp border border-zinc-800">
+                <form class="space-y-12">
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <input type="text" placeholder="ВАШЕ ИМЯ" required class="input-premium w-full text-xs uppercase font-bold" style="border-color: #3f3f46;">
+                        <input type="tel" placeholder="ТЕЛЕФОН" required class="input-premium w-full text-xs uppercase font-bold" style="border-color: #3f3f46;">
+                    </div>
+                    <input type="text" placeholder="НАЗВАНИЕ КОМПАНИИ" class="input-premium w-full text-xs uppercase font-bold" style="border-color: #3f3f46;">
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <label class="block text-[9px] text-zinc-600 uppercase mb-4">Бюджет</label>
+                            <select class="w-full bg-transparent border-b border-zinc-800 py-3 text-xs uppercase font-bold outline-none cursor-pointer">
+                                <option class="text-black">40,000 - 150,000 ₴</option>
+                                <option class="text-black">150,000+ ₴</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[9px] text-zinc-600 uppercase mb-4">Дедлайн</label>
+                            <input type="date" class="w-full bg-transparent border-b border-zinc-800 py-3 text-xs uppercase font-bold outline-none invert">
+                        </div>
+                    </div>
+                    <button class="w-full btn-premium py-8 sharp text-[11px] font-black tracking-[0.4em]">Отправить запрос</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 md:px-8 border-t" style="background-color: var(--bg-body); border-color: var(--border-color); color: var(--text-main);">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10 opacity-50 text-[9px] uppercase tracking-[0.3em] font-bold italic">
+            <div class="text-2xl font-black">INDEXFLOW</div>
+            <div class="flex space-x-12">
+                <a href="#" class="hover:text-[var(--primary)]">Telegram</a>
+                <a href="#" class="hover:text-[var(--primary)]">Instagram</a>
+                <a href="#" class="hover:text-[var(--primary)]">Behance</a>
+            </div>
+            <div>© 2024 IndexFlow Agency. Kyiv, UA.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция переключения глобальной темы
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('if_theme_final', theme);
+            setLocalTheme(theme);
+        }
+
+        // Локальная тема для UI Lab
+        function setLocalTheme(theme) {
+            const lab = document.getElementById('uiLab');
+            if(lab) lab.setAttribute('data-theme', theme);
+        }
+
+        // Инициализация темы
+        const savedTheme = localStorage.getItem('if_theme_final') || 'berry';
+        setTheme(savedTheme);
+        document.getElementById('themeSelector').value = savedTheme;
+
+        // FAQ Аккордеон
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
