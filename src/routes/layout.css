@@ -13,8 +13,9 @@
   --font-body: var(--font-body);
 }
 
-/* 1. Liquid Glass (Apple Premium) - ТЕМА ПО УМОЛЧАНИЮ */
-:root {
+/* 1. Liquid Glass (Apple Premium) - ТЕМА ПО УМОЛЧАНИЮ. Применяется через :root и [data-theme="apple"] */
+:root,
+[data-theme="apple"] {
     --primary: #0071e3;          
     --secondary: #f5f5f7;        
     --bg-body: #fbfbfd;          

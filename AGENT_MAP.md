@@ -1,0 +1,164 @@
+# Карта Проекта
+
+```
+- [DIR] .storybook/
+  - main.ts
+  - preview.ts
+- [DIR] .vscode/
+  - extensions.json
+  - settings.json
+- [DIR] ai/
+  - agent.md
+  - components.md
+  - st.css
+- [DIR] locales/
+  - en.json
+  - uk.json
+- [DIR] messages/
+  - [DIR] en/
+    - ads-anlitic.json
+    - globals.json
+    - home.json
+    - production.json
+    - supportoptimization.json
+    - techindex.json
+  - [DIR] ru/
+    - home.json
+  - [DIR] uk/
+    - ads-anlitic.json
+    - globals.json
+    - home.json
+    - production.json
+    - supportoptimization.json
+    - techindex.json
+- [DIR] project.inlang/
+  - [DIR] cache/
+    - [DIR] plugins/
+      - 2sy648wh9sugi
+      - ygx0uiahq6uw
+  - .gitignore
+  - .meta.json
+  - README.md
+  - settings.json
+- [DIR] scripts/
+  - map.cjs
+  - sync-stories.js
+- [DIR] src/
+  - [DIR] lib/
+    - [DIR] assets/
+      - favicon.svg
+    - [DIR] components/
+      - About.svelte
+      - CallbackForm.svelte
+      - Comparison.svelte
+      - Cta.svelte
+      - Disclaimer.svelte
+      - Expertise.svelte
+      - FAQ.svelte
+      - Footer.svelte
+      - Header.svelte
+      - Hero.svelte
+      - LogoCloud.svelte
+      - PageBuilder.svelte
+      - Pricing.svelte
+      - Seo.svelte
+      - ServicesExt.svelte
+      - Stats.svelte
+      - UILab.svelte
+      - Workflow.svelte
+    - [DIR] functions/
+      - generateSeoParams.ts
+    - [DIR] paraglide/
+      - [DIR] messages/
+        - _index.js
+        - en.js
+        - ru.js
+        - uk.js
+      - .gitignore
+      - .prettierignore
+      - messages.js
+      - README.md
+      - registry.js
+      - runtime.js
+      - server.js
+    - index.ts
+    - types.ts
+  - [DIR] routes/
+    - [DIR] [...path]/
+      - +page.server.ts
+      - +page.svelte
+    - +layout.server.ts
+    - +layout.svelte
+    - layout.css
+  - [DIR] stories/
+    - [DIR] assets/
+      - accessibility.png
+      - accessibility.svg
+      - addon-library.png
+      - assets.png
+      - avif-test-image.avif
+      - context.png
+      - discord.svg
+      - docs.png
+      - figma-plugin.png
+      - github.svg
+      - share.png
+      - styling.png
+      - testing.png
+      - theming.png
+      - tutorials.svg
+      - youtube.svg
+    - [DIR] components/
+      - About.stories.svelte
+      - CallbackForm.stories.svelte
+      - Comparison.stories.svelte
+      - Cta.stories.svelte
+      - Disclaimer.stories.svelte
+      - Expertise.stories.svelte
+      - FAQ.stories.svelte
+      - Footer.stories.svelte
+      - Header.stories.svelte
+      - Hero.stories.svelte
+      - LogoCloud.stories.svelte
+      - PageBuilder.stories.svelte
+      - Pricing.stories.svelte
+      - Seo.stories.svelte
+      - ServicesExt.stories.svelte
+      - Stats.stories.svelte
+      - UILab.stories.svelte
+      - Workflow.stories.svelte
+    - button.css
+    - Button.stories.svelte
+    - Button.svelte
+    - header.css
+    - Header.stories.svelte
+    - Header.svelte
+    - page.css
+    - Page.stories.svelte
+    - Page.svelte
+  - app.d.ts
+  - app.html
+  - hooks.server.ts
+  - hooks.ts
+- [DIR] static/
+  - android-chrome-192x192.png
+  - android-chrome-512x512.png
+  - apple-touch-icon.png
+  - favicon-16x16.png
+  - favicon-32x32.png
+  - favicon.ico
+  - robots.txt
+  - site.webmanifest
+- .geminiignore
+- .gitignore
+- .npmrc
+- GEMINI.md
+- move_stories.js
+- package.json
+- prymer.html
+- README.md
+- resolve.md
+- svelte.config.js
+- tsconfig.json
+- vite.config.ts
+```
