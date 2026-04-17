@@ -1,11 +1,11 @@
 <script lang="ts">
-    import * as m from '$lib/paraglide/messages';
-
-    let steps = [
-        { number: '01', tag: m.wf_step1_tag(), title: m.wf_step1_title(), description: m.wf_step1_desc() },
-        { number: '02', tag: m.wf_step2_tag(), title: m.wf_step2_title(), description: m.wf_step2_desc() },
-        { number: '03', tag: m.wf_step3_tag(), title: m.wf_step3_title(), description: m.wf_step3_desc() }
-    ];
+    let {
+        title = '',
+        steps = []
+    }: {
+        title?: string;
+        steps?: { number: string; tag: string; title: string; description: string }[];
+    } = $props();
 </script>
 
 <style>
@@ -29,7 +29,7 @@
 <section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card); animation-delay: 0.2s;" id="services">
     <div class="container mx-auto">
         <h2 class="text-3xl md:text-6xl font-black mb-20 md:mb-32 uppercase italic text-center tracking-tighter">
-            {m.wf_title()}
+            {title}
         </h2>
         <div class="wf-wrap">
             <div class="wf-line"></div>

@@ -1,9 +1,9 @@
 export type Theme = 'apple' | 'heritage' | 'berry' | 'mercedes' | 'wordpress';
 
 export interface PageSection {
-    id: string;
-    type: 'Hero' | 'LogoCloud' | 'Stats' | 'Expertise' | 'Workflow' | 'Disclaimer' | 'UILab' | 'Comparison' | 'Pricing' | 'FAQ' | 'CallbackForm';
-    data: any;
+    id: string; // Unique key
+    type: 'Hero' | 'LogoCloud' | 'Stats' | 'Expertise' | 'Workflow' | 'Disclaimer' | 'Pricing' | 'CallbackForm';
+    data: any; // Specific component data interface
 }
 
 export interface PageConfig {

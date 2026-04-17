@@ -1,0 +1,111 @@
+{
+  "theme": "apple",
+  "metaTitle": "IndexFlow | Digital Production & SEO Architecture",
+  "sections": [
+    {
+      "id": "hero-1",
+      "type": "Hero",
+      "data": {
+        "hero_title_1": "Цифровой",
+        "hero_title_2": "Поток",
+        "hero_desc": "IndexFlow проектирует архитектуру, которую Google признает эталонной. Масштабируйте свой бизнес через глубокую органическую индексацию.",
+        "btn_primary": "Запустить проект",
+        "btn_secondary": "Портфолио"
+      }
+    },
+    {
+      "id": "logo-cloud-1",
+      "type": "LogoCloud",
+      "data": {
+        "logos": [
+          "TECH CORP",
+          "FINANCE HUB",
+          "GLOBAL MEDIA",
+          "LUXURY REALTY",
+          "CRYPTO FLOW"
+        ]
+      }
+    },
+    {
+      "id": "stats-1",
+      "type": "Stats",
+      "data": {
+        "items": [
+          { "value": "500+", "label": "Проектов в индексе" },
+          { "value": "98%", "label": "Success Rate" },
+          { "value": "0.4s", "label": "LCP Speed" },
+          { "value": "x4.5", "label": "Средний ROI" }
+        ]
+      }
+    },
+    {
+      "id": "expertise-1",
+      "type": "Expertise",
+      "data": {
+        "title1": "Техническое",
+        "title2": "Доминирование",
+        "mainText": "Мы не используем шаблоны. Каждый проект IndexFlow — это ручная архитектура на чистом коде, гарантирующая отсутствие технического мусора и максимальный приоритет у поисковиков.",
+        "items": [
+          { "title": "SEO Architecture", "description": "Проектирование структуры данных под требования самых жестких алгоритмов." },
+          { "title": "Global Scale", "description": "Масштабирование на рынки Tier-1 с учетом локальной специфики индексации." }
+        ]
+      }
+    },
+    {
+      "id": "workflow-1",
+      "type": "Workflow",
+      "data": {
+        "title": "Процесс",
+        "steps": [
+          { "number": "1", "tag": "Этап 01", "title": "Анализ и Discovery", "description": "Глубокое исследование ниши и выявление \"семантических дыр\" у конкурентов. Мы строим карту захвата трафика." },
+          { "number": "2", "tag": "Этап 02", "title": "Core Engineering", "description": "Разработка чистого ядра системы. Без плагинов. Настройка кастомной структуры URL и мета-данных для Google." },
+          { "number": "3", "tag": "Этап 03", "title": "Deployment & Boost", "description": "Запуск проекта и активация мониторинга индексации. Мы сопровождаем ваш рост до первых значимых результатов." }
+        ]
+      }
+    },
+    {
+      "id": "disclaimer-1",
+      "type": "Disclaimer",
+      "data": {
+        "title": "Прозрачность и Этика",
+        "text": "IndexFlow не продает «схемы» обхода AdSense. Мы строим качественные сайты, которые Google любит органически. Любые обещания 100% гарантии прохода — это мошенничество. Наша цель — ваша долгосрочная репутация."
+      }
+    },
+    {
+      "id": "pricing-1",
+      "type": "Pricing",
+      "data": {
+        "title": "Прайс-лист",
+        "plans": [
+          {
+            "name": "Silver Engine",
+            "price": "45,000 ₴",
+            "features": ["Чистота кода (W3C)", "Базовая SEO структура"],
+            "buttonText": "Выбрать"
+          },
+          {
+            "name": "Business Authority",
+            "price": "105,000 ₴",
+            "features": ["0 Ошибок / Native", "Кастомная семантика"],
+            "buttonText": "Купить поток",
+            "isPopular": true
+          },
+          {
+            "name": "Platinum Custom",
+            "price": "320,000 ₴",
+            "features": ["Выделенная команда", "VIP поддержка 24/7"],
+            "buttonText": "VIP"
+          }
+        ]
+      }
+    },
+    {
+      "id": "callback-1",
+      "type": "CallbackForm",
+      "data": {
+        "title": "Вход <br> в <br> Поток.",
+        "description": "Каждый успешный проект начинается с одного правильного решения."
+      }
+    }
+  ]
+}
