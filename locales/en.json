@@ -1,0 +1,16 @@
+{
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contact",
+  "theme_default": "Default",
+  "theme_heritage": "Heritage",
+  "theme_berry": "Berry",
+  "theme_mercedes": "Mercedes",
+  "theme_wordpress": "WordPress",
+  "footer_copy": "© 2026 IndexFlow. All rights reserved.",
+  "seo_title": "IndexFlow",
+  "seo_desc": "IndexFlow platform",
+  "seo_keywords": "index, flow, platform",
+  "og_site_name": "IndexFlow"
+}

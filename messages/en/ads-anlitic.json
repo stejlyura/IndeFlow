@@ -1,0 +1,14 @@
+{
+  "theme": "berry",
+  "metaTitle": "Ads & Analytics",
+  "sections": [
+    {
+      "id": "ads-hero",
+      "type": "Hero",
+      "data": {
+        "title": "Ads & Analytics",
+        "subtitle": "Google Ads, GA4, GTM strictly via Partytown."
+      }
+    }
+  ]
+}

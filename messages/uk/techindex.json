@@ -1,0 +1,14 @@
+{
+  "theme": "mercedes",
+  "metaTitle": "Технічний Індекс - Indexing API та CWV",
+  "sections": [
+    {
+      "id": "tech-hero",
+      "type": "Hero",
+      "data": {
+        "title": "Технічна SEO Досконалість",
+        "subtitle": "Indexing API, Search Console, Відмінність CWV."
+      }
+    }
+  ]
+}

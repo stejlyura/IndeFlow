@@ -1,0 +1,14 @@
+{
+  "theme": "heritage",
+  "metaTitle": "Підтримка та Оптимізація",
+  "sections": [
+    {
+      "id": "support-hero",
+      "type": "Hero",
+      "data": {
+        "title": "Підтримка та Оптимізація",
+        "subtitle": "Виправлення помилок, витоки пам'яті JS, Безпека."
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "theme": "berry",
+  "metaTitle": "Реклама та Аналітика",
+  "sections": [
+    {
+      "id": "ads-hero",
+      "type": "Hero",
+      "data": {
+        "title": "Реклама та Аналітика",
+        "subtitle": "Google Ads, GA4, GTM виключно через Partytown."
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "theme": "heritage",
+  "metaTitle": "Support & Optimization",
+  "sections": [
+    {
+      "id": "support-hero",
+      "type": "Hero",
+      "data": {
+        "title": "Support & Optimization",
+        "subtitle": "Bug fixing, JS memory leaks, Security."
+      }
+    }
+  ]
+}

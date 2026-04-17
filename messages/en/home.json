@@ -1,0 +1,111 @@
+{
+  "theme": "berry",
+  "metaTitle": "IndexFlow | Digital Production & SEO Architecture",
+  "sections": [
+    {
+      "id": "hero-1",
+      "type": "Hero",
+      "data": {
+        "hero_title_1": "Digital",
+        "hero_title_2": "Flow",
+        "hero_desc": "IndexFlow designs architecture that Google recognizes as a benchmark. Scale your business through deep organic indexing.",
+        "btn_primary": "Launch Project",
+        "btn_secondary": "Portfolio"
+      }
+    },
+    {
+      "id": "logo-cloud-1",
+      "type": "LogoCloud",
+      "data": {
+        "logos": [
+          "TECH CORP",
+          "FINANCE HUB",
+          "GLOBAL MEDIA",
+          "LUXURY REALTY",
+          "CRYPTO FLOW"
+        ]
+      }
+    },
+    {
+      "id": "stats-1",
+      "type": "Stats",
+      "data": {
+        "items": [
+          { "value": "500+", "label": "Projects in Index" },
+          { "value": "98%", "label": "Success Rate" },
+          { "value": "0.4s", "label": "LCP Speed" },
+          { "value": "x4.5", "label": "Average ROI" }
+        ]
+      }
+    },
+    {
+      "id": "expertise-1",
+      "type": "Expertise",
+      "data": {
+        "title1": "Technical",
+        "title2": "Dominance",
+        "mainText": "We don't use templates. Every IndexFlow project is a hand-crafted architecture on clean code, guaranteeing the absence of technical garbage and maximum priority from search engines.",
+        "items": [
+          { "title": "SEO Architecture", "description": "Designing data structures to meet the requirements of the most stringent algorithms." },
+          { "title": "Global Scale", "description": "Scaling to Tier-1 markets taking into account local indexing specifics." }
+        ]
+      }
+    },
+    {
+      "id": "workflow-1",
+      "type": "Workflow",
+      "data": {
+        "title": "Process",
+        "steps": [
+          { "number": "1", "tag": "Phase 01", "title": "Analysis & Discovery", "description": "Deep niche research and identifying \"semantic holes\" among competitors. We build a traffic capture map." },
+          { "number": "2", "tag": "Phase 02", "title": "Core Engineering", "description": "Development of a clean system core. No plugins. Custom URL structure and meta-data configuration for Google." },
+          { "number": "3", "tag": "Phase 03", "title": "Deployment & Boost", "description": "Project launch and indexing monitoring activation. We accompany your growth up to the first significant results." }
+        ]
+      }
+    },
+    {
+      "id": "disclaimer-1",
+      "type": "Disclaimer",
+      "data": {
+        "title": "Transparency and Ethics",
+        "text": "IndexFlow does not sell AdSense bypass \"schemes\". We build quality websites that Google loves organically. Any promises of 100% pass guarantee are fraud. Our goal is your long-term reputation."
+      }
+    },
+    {
+      "id": "pricing-1",
+      "type": "Pricing",
+      "data": {
+        "title": "Pricing",
+        "plans": [
+          {
+            "name": "Silver Engine",
+            "price": "45,000 ₴",
+            "features": ["Clean Code (W3C)", "Basic SEO Structure"],
+            "buttonText": "Select"
+          },
+          {
+            "name": "Business Authority",
+            "price": "105,000 ₴",
+            "features": ["0 Errors / Native", "Custom Semantic"],
+            "buttonText": "Buy Flow",
+            "isPopular": true
+          },
+          {
+            "name": "Platinum Custom",
+            "price": "320,000 ₴",
+            "features": ["Full Market Dominance", "Dedicated Team"],
+            "buttonText": "VIP"
+          }
+        ]
+      }
+    },
+    {
+      "id": "callback-1",
+      "type": "CallbackForm",
+      "data": {
+        "title": "Enter <br> the <br> Flow.",
+        "description": "Every successful project begins with one right decision."
+      }
+    }
+  ]
+}
