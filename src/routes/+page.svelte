@@ -18,20 +18,42 @@
 </script>
 
 <Seo />
+
+<!-- Header -->
 <Header />
 
-<main>
-	<Hero />
-	<LogoCloud />
-	<Stats />
-	<Expertise />
-	<Workflow />
-	<Disclaimer />
-	<UILab />
-	<Comparison />
-	<Pricing />
-	<FAQ />
-	<CallbackForm />
-</main>
+<!-- Hero -->
+<Hero />
 
+<!-- Logo Cloud -->
+<LogoCloud />
+
+<!-- Stats -->
+<Stats />
+
+<!-- Expertise -->
+<Expertise />
+
+<!-- Workflow -->
+<Workflow />
+
+<!-- Disclaimer -->
+<Disclaimer />
+
+<!-- UI Component Lab -->
+<UILab />
+
+<!-- Comparison -->
+<Comparison />
+
+<!-- Pricing -->
+<Pricing />
+
+<!-- FAQ -->
+<FAQ />
+
+<!-- Callback Form -->
+<CallbackForm />
+
+<!-- Footer -->
 <Footer />
