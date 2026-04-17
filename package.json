@@ -10,8 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"storybook": "node scripts/sync-stories.js && storybook dev -p 6006",
+		"build-storybook": "node scripts/sync-stories.js && storybook build"
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js": "^2.15.2",

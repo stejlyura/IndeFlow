@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let logos: string[] = ['TECH CORP', 'FINANCE HUB', 'GLOBAL MEDIA', 'LUXURY REALTY', 'CRYPTO FLOW'];
+    let { logos = ['TECH CORP', 'FINANCE HUB', 'GLOBAL MEDIA', 'LUXURY REALTY', 'CRYPTO FLOW'] } = $props<{ logos?: string[] }>();
 </script>
 
 <section class="py-12 border-y border-[var(--border-color)] overflow-hidden reveal">

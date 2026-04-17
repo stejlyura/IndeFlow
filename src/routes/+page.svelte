@@ -1,5 +1,20 @@
 <script lang="ts">
-	import { Header, Hero, Workflow, Expertise, Footer, Seo, About, ServicesExt, Cta } from '$lib';
+	import { 
+		Seo, 
+		Header, 
+		Hero, 
+		LogoCloud, 
+		Stats, 
+		Expertise, 
+		Workflow, 
+		Disclaimer, 
+		UILab, 
+		Comparison, 
+		Pricing, 
+		FAQ, 
+		CallbackForm, 
+		Footer 
+	} from '$lib';
 </script>
 
 <Seo />
@@ -7,11 +22,16 @@
 
 <main>
 	<Hero />
-	<About />
-	<Workflow />
-	<ServicesExt />
+	<LogoCloud />
+	<Stats />
 	<Expertise />
-	<Cta />
+	<Workflow />
+	<Disclaimer />
+	<UILab />
+	<Comparison />
+	<Pricing />
+	<FAQ />
+	<CallbackForm />
 </main>
 
 <Footer />

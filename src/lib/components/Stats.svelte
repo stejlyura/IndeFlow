@@ -1,10 +1,10 @@
 <script lang="ts">
-    export let items: { value: string, label: string }[] = [
+    let { items = [
         { value: "500+", label: "Projects" },
         { value: "0.4s", label: "Speed" },
         { value: "99%", label: "Uptime" },
         { value: "24/7", label: "Support" }
-    ];
+    ] } = $props<{ items?: { value: string, label: string }[] }>();
 </script>
 
 <section class="py-16 px-4 md:px-8 reveal">

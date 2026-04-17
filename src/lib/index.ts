@@ -12,3 +12,8 @@ export { default as LogoCloud } from './components/LogoCloud.svelte';
 export { default as Stats } from './components/Stats.svelte';
 export { default as Pricing } from './components/Pricing.svelte';
 export { default as CallbackForm } from './components/CallbackForm.svelte';
+export { default as Disclaimer } from './components/Disclaimer.svelte';
+export { default as Comparison } from './components/Comparison.svelte';
+export { default as FAQ } from './components/FAQ.svelte';
+export { default as UILab } from './components/UILab.svelte';
+export { default as PageBuilder } from './components/PageBuilder.svelte';

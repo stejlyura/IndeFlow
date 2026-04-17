@@ -1,11 +1,10 @@
 <script lang="ts">
     import type { PricingPlan } from '$lib/types';
-    export let title: string = "Pricing";
-    export let plans: PricingPlan[] = [
+    let { title = "Pricing", plans = [
         { name: "Silver", price: "45,000 ₴", features: ["SEO", "Landing"], buttonText: "Select" },
         { name: "Business", price: "105,000 ₴", features: ["AdSense", "Support"], buttonText: "Buy", isPopular: true },
         { name: "Enterprise", price: "Custom", features: ["Full Service", "SLA"], buttonText: "Contact" }
-    ];
+    ] } = $props<{ title?: string, plans?: PricingPlan[] }>();
 </script>
 
 <section class="py-24 px-4 md:px-8 reveal">
