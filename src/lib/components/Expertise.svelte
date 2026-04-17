@@ -1,15 +1,17 @@
 <script lang="ts">
+    import type { ExpertiseItem } from '$lib/types';
+
     let {
         title1 = '',
         title2 = '',
         mainText = '',
         items = []
-    }: {
+    } = $props<{
         title1?: string;
         title2?: string;
         mainText?: string;
-        items?: { title: string; description: string }[];
-    } = $props();
+        items?: ExpertiseItem[];
+    }>();
 </script>
 
 <section class="py-24 px-4 md:px-8 bg-accent-section reveal" style="animation-delay: 0.3s;" id="portfolio">

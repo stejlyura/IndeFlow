@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Header, Footer, } from '$lib';
+	import './layout.css';
 	import { generateSeoConfig } from '$lib/functions/generateSeoParams';
     
     let { children } = $props();
