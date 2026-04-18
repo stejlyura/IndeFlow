@@ -1,0 +1,16 @@
+{
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contact",
+  "theme_default": "Liquid Glass",
+  "theme_heritage": "Heritage Gold",
+  "theme_berry": "Berry Mint",
+  "theme_mercedes": "Aero Mercedes",
+  "theme_wordpress": "Blueprint",
+  "hero_title_1": "Digital",
+  "hero_title_2": "Flow",
+  "hero_desc": "IndexFlow designs architecture that Google recognizes as a benchmark.",
+  "btn_primary": "Launch Project",
+  "btn_secondary": "Portfolio"
+}

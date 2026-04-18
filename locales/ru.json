@@ -1,0 +1,16 @@
+{
+  "nav_home": "Главная",
+  "nav_services": "Услуги",
+  "nav_portfolio": "Портфолио",
+  "nav_contact": "Контакт",
+  "theme_default": "Liquid Glass",
+  "theme_heritage": "Heritage Gold",
+  "theme_berry": "Berry Mint",
+  "theme_mercedes": "Aero Mercedes",
+  "theme_wordpress": "Blueprint",
+  "hero_title_1": "Цифровой",
+  "hero_title_2": "Поток",
+  "hero_desc": "IndexFlow проектирует архитектуру, которую Google признает эталонной.",
+  "btn_primary": "Запустить проект",
+  "btn_secondary": "Портфолио"
+}

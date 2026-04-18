@@ -11,12 +11,12 @@
 <style>
     .wf-wrap { position: relative; max-width: 900px; margin: 0 auto; }
     .wf-line { position: absolute; left: 23px; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
-    .wf-step { position: relative; padding-left: 80px; margin-bottom: 3rem; }
+    .wf-step { position: relative; padding-left: 80px; margin-bottom: 4rem; }
     .wf-dot { position: absolute; left: 0; top: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--primary); font-weight: 900; color: #000; }
     
     @media (min-width: 768px) {
         .wf-line { left: 50%; transform: translateX(-50%); }
-        .wf-step { padding-left: 0; margin-bottom: 6rem; display: flex; align-items: center; width: 100%; }
+        .wf-step { padding-left: 0; margin-bottom: 8rem; display: flex; align-items: center; width: 100%; }
         .wf-dot { left: 50%; transform: translateX(-50%); }
         .wf-content { width: 45%; }
         .wf-step:nth-child(odd) { justify-content: flex-start; }
@@ -28,7 +28,7 @@
 
 <section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card); animation-delay: 0.2s;" id="services">
     <div class="container mx-auto">
-        <h2 class="text-3xl md:text-6xl font-black mb-20 md:mb-32 uppercase italic text-center tracking-tighter">
+        <h2 class="text-4xl md:text-7xl font-black mb-24 uppercase italic text-center tracking-tighter">
             {title}
         </h2>
         <div class="wf-wrap">

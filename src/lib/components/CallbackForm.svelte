@@ -2,7 +2,7 @@
     let { title = "Enter<br> the<br> Flow", description = "Start your project today." } = $props<{ title?: string, description?: string }>();
 </script>
 
-<section class="py-32 px-4 md:px-8 relative reveal" style="background-color: var(--bg-accent); color: var(--text-accent);">
+<section id="contact" class="py-32 px-4 md:px-8 relative reveal" style="background-color: var(--bg-accent); color: var(--text-accent);">
     <div class="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-24">
         <div>
             <h2 class="text-6xl md:text-[110px] font-black uppercase italic leading-[0.85] mb-12 tracking-tighter">{@html title}</h2>
