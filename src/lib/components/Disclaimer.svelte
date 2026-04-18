@@ -1,11 +1,30 @@
 <script lang="ts">
-    let { message = "Warning: Experimental features enabled. Data may be reset." } = $props<{ message?: string }>();
+    let {
+        title = "Прозрачность и Этика",
+        message = 'IndexFlow не продает «схемы» обхода AdSense. Мы строим качественные сайты, которые Google любит органически. Любые обещания 100% гарантии прохода — это <span class="underline">мошенничество</span>. Наша цель — ваша долгосрочная репутация.',
+    } = $props<{ title?: string; message?: string }>();
 </script>
 
-<div class="py-8 px-4 md:px-8 reveal">
+<section class="py-12 px-4 md:px-8 reveal">
     <div class="container mx-auto max-w-4xl">
-        <div class="disclaimer-box text-center text-xs md:text-sm font-bold uppercase tracking-widest leading-relaxed">
-            {message}
+        <div
+            class="disclaimer-box p-8 md:p-12 flex flex-col md:flex-row items-center gap-10"
+        >
+            <div
+                class="shrink-0 w-16 h-16 flex items-center justify-center border-2 border-current rounded-full"
+            >
+                <span class="text-3xl font-bold italic">!</span>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold uppercase mb-4 tracking-widest">
+                    {title}
+                </h3>
+                <p
+                    class="text-sm md:text-base opacity-90 leading-relaxed italic font-medium"
+                >
+                    {@html message}
+                </p>
+            </div>
         </div>
     </div>
-</div>
+</section>
