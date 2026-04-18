@@ -124,6 +124,13 @@
         align-items: center;
         justify-content: center;
         padding: 0.75rem 2rem;
+        backdrop-filter: var(--glass);
+        -webkit-backdrop-filter: var(--glass);
+    }
+
+    :root:not([data-theme]) .btn-premium,
+    [data-theme="apple"] .btn-premium {
+        background-color: rgba(0, 113, 227, 0.85);
     }
 
     .btn-premium:hover {

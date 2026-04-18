@@ -1,17 +1,11 @@
 <script lang="ts">
-    import * as m from '$lib/paraglide/messages';
-
-    let services = [
-        { title: m.srv_ext_1_title(), desc: m.srv_ext_1_desc() },
-        { title: m.srv_ext_2_title(), desc: m.srv_ext_2_desc() },
-        { title: m.srv_ext_3_title(), desc: m.srv_ext_3_desc() }
-    ];
+    let { title = '', services = [] } = $props<{ title?: string, services?: { title: string, desc: string }[] }>();
 </script>
 
 <section class="py-24 px-4 md:px-8 bg-accent-section reveal">
     <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-16 tracking-tighter text-center">
-            {m.srv_ext_title()}
+            {title}
         </h2>
 
         <div class="grid md:grid-cols-3 gap-12">

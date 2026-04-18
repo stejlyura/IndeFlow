@@ -1,25 +1,46 @@
 # Карта Проекта
 
 ```
+- [DIR] .agents/
+  - [DIR] skills/
+    - [DIR] fullstack-backend/
+      - SKILL.md
+    - [DIR] fullstack-integrator/
+      - SKILL.md
+    - [DIR] seo-content/
+      - SKILL.md
+    - [DIR] seo-content-eeat/
+      - SKILL.md
+    - [DIR] seo-technical/
+      - SKILL.md
+    - [DIR] svelte-dev/
+      - SKILL.md
+    - [DIR] svelte-ui-expert/
+      - SKILL.md
+    - [DIR] sveltekit-dev/
+      - SKILL.md
+    - [DIR] sveltekit-ssg-expert/
+      - SKILL.md
+- [DIR] .gemini/
+  - GEMINI.md
 - [DIR] .storybook/
   - main.ts
   - preview.ts
 - [DIR] .vscode/
   - extensions.json
   - settings.json
-- [DIR] ai/
-  - agent.md
-  - components.md
-  - st.css
 - [DIR] locales/
   - en.json
+  - ru.json
   - uk.json
 - [DIR] messages/
   - [DIR] en/
     - ads-anlitic.json
+    - en.json
     - globals.json
     - home.json
     - production.json
+    - ru.json
     - supportoptimization.json
     - techindex.json
   - [DIR] ru/
@@ -34,8 +55,9 @@
 - [DIR] project.inlang/
   - [DIR] cache/
     - [DIR] plugins/
-      - 2sy648wh9sugi
-      - ygx0uiahq6uw
+      - 26v6euh8ltdza
+      - 3fhvg7lmyjji3
+      - 3j6u37qs3lqz3
   - .gitignore
   - .meta.json
   - README.md
@@ -46,7 +68,6 @@
 - [DIR] src/
   - [DIR] lib/
     - [DIR] assets/
-      - favicon.svg
     - [DIR] components/
       - About.svelte
       - CallbackForm.svelte
@@ -71,9 +92,20 @@
     - [DIR] paraglide/
       - [DIR] messages/
         - _index.js
-        - en.js
-        - ru.js
-        - uk.js
+        - btn_primary.js
+        - btn_secondary.js
+        - hero_desc.js
+        - hero_title_1.js
+        - hero_title_2.js
+        - nav_contact.js
+        - nav_home.js
+        - nav_portfolio.js
+        - nav_services.js
+        - theme_berry.js
+        - theme_default.js
+        - theme_heritage.js
+        - theme_mercedes.js
+        - theme_wordpress.js
       - .gitignore
       - .prettierignore
       - messages.js
@@ -83,6 +115,30 @@
       - server.js
     - index.ts
     - types.ts
+  - [DIR] paraglide/
+    - [DIR] messages/
+      - _index.js
+      - btn_primary.js
+      - btn_secondary.js
+      - hero_desc.js
+      - hero_title_1.js
+      - hero_title_2.js
+      - nav_contact.js
+      - nav_home.js
+      - nav_portfolio.js
+      - nav_services.js
+      - theme_berry.js
+      - theme_default.js
+      - theme_heritage.js
+      - theme_mercedes.js
+      - theme_wordpress.js
+    - .gitignore
+    - .prettierignore
+    - messages.js
+    - README.md
+    - registry.js
+    - runtime.js
+    - server.js
   - [DIR] routes/
     - [DIR] [...path]/
       - +page.server.ts
@@ -152,7 +208,9 @@
 - .geminiignore
 - .gitignore
 - .npmrc
-- GEMINI.md
+- build_output.txt
+- fram.txt
+- In_work.md
 - move_stories.js
 - package.json
 - prymer.html
