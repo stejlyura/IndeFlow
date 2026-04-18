@@ -5,3 +5,5 @@ build/
 *.log
 .git/
 package-lock.json
+.storybook/
+./src/lib/stories/*
