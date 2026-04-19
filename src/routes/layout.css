@@ -1,5 +1,38 @@
 @import 'tailwindcss';
 
+/* Local Fonts */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
@@ -24,8 +57,8 @@
     --text-accent: #ffffff;      
     --text-main: #1d1d1f;        
     --border-color: rgba(0, 0, 0, 0.1); 
-    --font-head: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-head: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
     --glass: blur(20px);         
 }
 

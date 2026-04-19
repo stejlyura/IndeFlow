@@ -12,8 +12,6 @@
             },
         ],
     } = $props<{ title?: string; questions?: { q: string; a: string }[] }>();
-
-    let openIndex = $state(-1);
 </script>
 
 <section class="py-24 px-4 md:px-8 reveal bg-(--bg-body)">
@@ -24,16 +22,14 @@
             {title}
         </h2>
         <div class="border-t border-[var(--border-color)]">
-            {#each questions as item, i}
-                <div class="border-b border-[var(--border-color)] py-10">
-                    <button
-                        class="w-full flex justify-between items-center text-sm font-bold uppercase tracking-[0.2em] text-left"
-                        onclick={() => (openIndex = openIndex === i ? -1 : i)}
+            {#each questions as item}
+                <details class="group border-b border-[var(--border-color)]">
+                    <summary
+                        class="w-full flex justify-between items-center py-10 text-sm font-bold uppercase tracking-[0.2em] text-left cursor-pointer list-none appearance-none"
                     >
                         <span>{item.q}</span>
                         <span
-                            class="transition-transform duration-300 opacity-50"
-                            class:rotate-180={openIndex === i}
+                            class="transition-transform duration-300 opacity-50 group-open:rotate-180"
                         >
                             <svg
                                 fill="none"
@@ -46,16 +42,20 @@
                                 width="24"><path d="M6 9l6 6 6-6"></path></svg
                             >
                         </span>
-                    </button>
-                    {#if openIndex === i}
-                        <div
-                            class="mt-6 text-[var(--text-main)] opacity-70 leading-relaxed text-sm"
-                        >
-                            {item.a}
-                        </div>
-                    {/if}
-                </div>
+                    </summary>
+                    <div
+                        class="pb-10 text-[var(--text-main)] opacity-70 leading-relaxed text-sm"
+                    >
+                        {item.a}
+                    </div>
+                </details>
             {/each}
         </div>
     </div>
 </section>
+
+<style>
+    summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

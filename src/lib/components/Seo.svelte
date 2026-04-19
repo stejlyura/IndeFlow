@@ -68,6 +68,20 @@
     <!-- Theme Color for mobile browsers -->
     <meta name="theme-color" content="#000000" />
 
+    <!-- Additional Meta Tags -->
+    {#if config?.additionalMetaTags}
+        {#each config.additionalMetaTags as tag}
+            <meta name={tag.name} content={tag.content} />
+        {/each}
+    {/if}
+
+    <!-- Additional Link Tags (Favicons, Manifest, etc.) -->
+    {#if config?.additionalLinkTags}
+        {#each config.additionalLinkTags as link}
+            <link rel={link.rel} href={link.href} sizes={link.sizes} />
+        {/each}
+    {/if}
+
     <!-- JSON-LD Schema -->
     {#if finalJsonLd}
         {@html `<script type="application/ld+json">${JSON.stringify(finalJsonLd)}<\/script>`}
