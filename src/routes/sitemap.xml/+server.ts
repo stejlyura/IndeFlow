@@ -4,7 +4,7 @@ import type { RequestHandler } from './$types';
 export const GET: RequestHandler = async () => {
 	// Dynamically generate entries based on existing JSON files
 	const modules = import.meta.glob('/messages/**/*.json');
-	const baseUrl = 'https://indexflow.io'; // Change to your actual domain
+	const baseUrl = 'https://indexflow.agency'; // Change to your actual domain
 	const paths: string[] = [];
 
 	for (const file of Object.keys(modules)) {

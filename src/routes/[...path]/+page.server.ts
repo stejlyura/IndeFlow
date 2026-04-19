@@ -1,38 +1,36 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
 import type { PageConfig } from '$lib/types';
 
 export const entries: EntryGenerator = () => {
-	// Dynamically generate entries based on existing JSON files
+	// Dynamically generate entries based on JSON files in /messages/{lang}/
 	const modules = import.meta.glob('/messages/**/*.json');
-	const paths: { path: string }[] = [{ path: '' }];
+	const paths: { path: string }[] = [];
+	const locales = ['en', 'ru', 'uk'];
 
 	for (const file of Object.keys(modules)) {
-		// e.g., /messages/europe/en/home.json
+		// e.g., /messages/en/home.json or /messages/en/technical.json
 		const cleanPath = file.replace('/messages/', '').replace('.json', '');
 		const parts = cleanPath.split('/');
-		if (parts.length >= 3) {
-			const region = parts[0];
-			const lang = parts[1];
-			const page = parts.slice(2).join('/');
+		
+		if (parts.length >= 2) {
+			const lang = parts[0];
+			const page = parts.slice(1).join('/');
 
-			// Add full path
-			paths.push({ path: `${region}/${lang}/${page}` });
+			if (page === 'common') continue; // Skip common translations
 
-			// Add short variants for defaults
-			if (region === 'europe') {
-				// Псевдоним 'eu' для коротких URL
-				paths.push({ path: `eu/${lang}/${page}` });
-				paths.push({ path: `${lang}/${page}` });
-				
-				if (page === 'home') {
-					paths.push({ path: `eu/${lang}` });
-					paths.push({ path: `${region}/${lang}` });
-					paths.push({ path: `${lang}` });
-				}
+			// Generate path: lang/page
+			paths.push({ path: `${lang}/${page}` });
+
+			// If it's the home page, also allow just the language code
+			if (page === 'home') {
+				paths.push({ path: `${lang}` });
 			}
 		}
 	}
+
+	// Add root path
+	paths.push({ path: '' });
 
 	return paths;
 };
@@ -40,24 +38,22 @@ export const entries: EntryGenerator = () => {
 export const load: PageServerLoad = async ({ params }) => {
 	const pathParts = params.path ? params.path.split('/').filter(Boolean) : [];
 
-	let region = 'europe';
 	let lang = 'en';
 	let page = 'home';
 
-	// Определяем известные регионы (включая алиас 'eu')
 	const knownRegions = ['europe', 'cis', 'asia', 'usa', 'eu'];
 
 	if (pathParts.length > 0) {
+		// Ignore legacy region prefixes
 		if (knownRegions.includes(pathParts[0])) {
-			const rawRegion = pathParts.shift()!;
-			// Маппинг алиаса 'eu' к реальной папке 'europe'
-			region = rawRegion === 'eu' ? 'europe' : rawRegion;
+			pathParts.shift();
 		}
 		
-		if (pathParts.length > 0 && pathParts[0].length === 2) {
+		// Parse language
+		if (pathParts.length > 0 && ['en', 'ru', 'uk'].includes(pathParts[0])) {
 			lang = pathParts.shift()!;
 		}
-
+		
 		if (pathParts.length > 0) {
 			page = pathParts.join('/');
 		}
@@ -65,21 +61,26 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	try {
 		const modules = import.meta.glob('/messages/**/*.json');
-		const importPath = `/messages/${region}/${lang}/${page}.json`;
+		let importPath = `/messages/${lang}/${page}.json`;
 		
 		if (!modules[importPath]) {
-			console.error(`Available modules:`, Object.keys(modules));
-			throw new Error(`Module ${importPath} not found in import.meta.glob`);
+			console.warn(`Module ${importPath} not found, falling back to English`);
+			importPath = `/messages/en/${page}.json`;
+		}
+		
+		if (!modules[importPath]) {
+			throw error(404, `Page content not found for ${page}`);
 		}
 		
 		const data = await modules[importPath]() as { default: PageConfig };
 		return {
 			pageConfig: data.default,
-			region,
-			lang
+			lang,
+			region: 'europe' // Default region for the new structure
 		};
 	} catch (err) {
-		console.error(`Error loading page config for region: ${region}, lang: ${lang}, page: ${page}`, err);
+		console.error(`Error loading page config for lang: ${lang}, page: ${page}`, err);
 		throw error(404, 'Not found');
 	}
 };
+

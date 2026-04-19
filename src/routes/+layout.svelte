@@ -2,27 +2,25 @@
     import { Header, Footer, Seo } from '$lib';
 	import './layout.css';
 	import { generateSeoConfig } from '$lib/functions/generateSeoParams';
-	import { setContext } from 'svelte';
+    import { page } from '$app/state';
+    import type { LayoutData } from './$types';
     
-    let { data, children } = $props();
+    let { data, children }: { data: LayoutData & { pages?: string[] }, children: any } = $props();
 
-    let seoConfig = $derived(generateSeoConfig(data.pageConfig));
+    // Use page.data for page-specific SEO as layout data is empty
+    let seoConfig = $derived(generateSeoConfig(page.data.pageConfig, page.url.pathname, page.data.lang));
     
     $effect(() => {
-        if (data.lang) {
-            document.documentElement.lang = data.lang;
+        if (page.data.lang) {
+            document.documentElement.lang = page.data.lang;
         }
     });
 </script>
 
-<Seo 
-	seo_title={seoConfig.title} 
-	seo_desc={seoConfig.description} 
-	seo_keywords={seoConfig.keywords}
-/>
+<Seo config={seoConfig} />
 
-<div class="min-h-screen flex flex-col" data-region={data.region} data-lang={data.lang}>
-    <Header />
+<div class="min-h-screen flex flex-col" data-region={page.data.region} data-lang={page.data.lang}>
+    <Header pages={data.pages} />
     <main class="grow">
         {@render children()}
     </main>

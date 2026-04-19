@@ -4,7 +4,11 @@ declare global {
 	namespace App {
 		// interface Error {}
 		// interface Locals {}
-		// interface PageData {}
+		interface PageData {
+			pageConfig?: import('$lib/types').PageConfig;
+			lang?: string;
+			region?: string;
+		}
 		// interface PageState {}
 		// interface Platform {}
 	}

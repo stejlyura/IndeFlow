@@ -3,24 +3,6 @@
 > **Agent Instructions (For AI Model / Flash):**
 > This is a strict step-by-step technical checklist. Your goal is to execute these tasks precisely and efficiently. For each step, provide complete code or directly modify the files. Do not skip any steps. Provide complete, drop-in replacement code for any file you modify. Pay special attention to configuring the project for a Multi-Page Application (MPA) environment without client-side Svelte hydration.
 
-## 1. Architecture and Configuration (Foundation)
-These settings ensure the site is statically generated and optimal for bots.
-- [ ] **Switch to MPA:** Open the root `src/routes/+layout.server.ts` (or `+layout.js` / `+layout.ts`) and add `export const csr = false;` to globally disable Svelte client hydration.
-- [ ] **Enable SSG:** In the same layout file, set `export const prerender = true;`.
-- [ ] **Clean URLs:** Add `export const trailingSlash = 'always';` in the layout configuration (standard for many hosts and SEO best practices).
-- [ ] **Adapter Validation:** Ensure `svelte.config.js` is correctly configured with `@sveltejs/adapter-static`.
-- [ ] **Entry Paths:** Verify that the `entries` function in `src/routes/[...path]/+page.server.ts` exports all possible routes (all languages and pages) for full pre-rendering.
-
-## 2. Technical SEO (Google Bot Optimization)
-Ensure search consoles display perfect metrics without duplicates.
-- [ ] **Dynamic Meta Tags (SEO Component):** Create or update an `SEO.svelte` component that accepts `title`, `description`, and `og:image`. Inject it into `<svelte:head>` on all pages.
-- [ ] **JSON-LD Schema:** Add `Service` or `Organization` JSON-LD markup to the main landing page.
-- [ ] **Sitemap.xml:** Set up automatic `sitemap.xml` generation during the build step (via a script or `sveltekit-sitemap`).
-- [ ] **Robots.txt:** Verify `static/robots.txt` exists, allows crawling, and correctly links to the sitemap.
-- [ ] **Improve `generateSeoParams.ts` (Canonical & Hreflang):**
-  - Remove hardcoded generic placeholders (like `PLACEHOLDER_META_TITLE`) and replace them with actual project defaults.
-  - Implement language-aware routing logic for canonical URLs. The `canonical` tag MUST always point to the English (`en`) version of the page (e.g., `https://domain.com/en/page/`).
-  - Generate `<link rel="alternate" hreflang="xx" href="...">` tags for all localized versions (e.g., `ru`) to correctly link them to the canonical English page.
 
 ## 3. Performance & Resources (Lighthouse 100/100)
 Optimize loading speed to pass Google's Core Web Vitals.
