@@ -1,30 +1,224 @@
 {
   "Hero": {
     "props": {
-      "title": "Digital Flow",
-      "subtitle": "IndexFlow designs architecture that Google recognizes as a benchmark.",
+      "title": "Unrivaled SEO & Web Architecture",
+      "subtitle": "IndexFlow engineers high-performance platforms recognized by Google as industry benchmarks. Zero bloat. 100% performance.",
       "seo": {
-        "title": "IndexFlow - High Performance Web Architecture",
-        "description": "IndexFlow designs architecture that Google recognizes as a benchmark."
+        "title": "IndexFlow | Elite SEO & High-Performance Web Architecture",
+        "description": "IndexFlow provides elite SEO strategies and SvelteKit architectures designed for unparalleled performance, EEAT compliance, and search dominance.",
+        "keywords": "SEO agency, high performance web architecture, SvelteKit, EEAT, technical SEO, zero JS, fast websites"
       }
+    }
+  },
+  "LogoCloud": {
+    "props": {
+      "logos": [
+        "GOOGLE PARTNER",
+        "Ahrefs Certified",
+        "SEMRush Expert",
+        "SvelteKit Pro",
+        "Cloudflare Edge"
+      ]
     }
   },
   "Stats": {
     "props": {
       "items": [
         {
-          "value": "100%",
-          "label": "Performance"
+          "value": "100",
+          "label": "Lighthouse Score"
         },
         {
-          "value": "Zero",
+          "value": "0kb",
           "label": "JS Overhead"
+        },
+        {
+          "value": "5x",
+          "label": "Traffic Growth"
+        },
+        {
+          "value": "<50ms",
+          "label": "TTFB"
         }
-      ],
-      "seo": {
-        "title": "Performance Stats",
-        "description": "Our architecture achieves 100% performance with zero JS overhead."
-      }
+      ]
+    }
+  },
+  "About": {
+    "props": {
+      "title": "Authoritative SEO Engineering",
+      "subtitle": "We don't just optimize. We architect for search dominance.",
+      "p1": "At IndexFlow, we merge cutting-edge SvelteKit static site generation with deeply researched EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) principles.",
+      "p2": "Our team consists of veteran SEO specialists and performance engineers who understand that modern search engines reward technically flawless, hyper-fast user experiences.",
+      "p3": "Every line of code and every piece of content is engineered to rank. We deliver verifiable results, zero-JS architectures by default, and strategies that outlast algorithm updates."
+    }
+  },
+  "ServicesExt": {
+    "props": {
+      "title": "Our Core Competencies",
+      "services": [
+        {
+          "title": "Technical SEO Audits",
+          "desc": "Deep architectural analysis to eliminate crawl errors, optimize indexation, and resolve complex structural issues."
+        },
+        {
+          "title": "Performance Engineering",
+          "desc": "Rebuilding web platforms using SvelteKit SSG and Edge Networks for sub-100ms load times and perfect Core Web Vitals."
+        },
+        {
+          "title": "EEAT Strategy & Content",
+          "desc": "Establishing brand authority and trust through expertly vetted, search-intent optimized semantic content."
+        },
+        {
+          "title": "Migration & Relaunch",
+          "desc": "Risk-free site migrations ensuring traffic retention, structured data continuity, and zero downtime."
+        }
+      ]
+    }
+  },
+  "Expertise": {
+    "props": {
+      "title": "Why IndexFlow is the Standard",
+      "items": [
+        {
+          "title": "CSS-First Interactions",
+          "description": "We replace heavy JavaScript libraries with native HTML and CSS-first solutions. This provides the same interactivity with zero bundle overhead."
+        },
+        {
+          "title": "Partytown Integration",
+          "description": "All third-party trackers and analytics are offloaded to web workers. Your main thread remains unblocked for your users."
+        },
+        {
+          "title": "Structured Data",
+          "description": "Comprehensive schema.org markup tailored to your niche, helping search engines understand and feature your content."
+        }
+      ]
+    }
+  },
+  "Comparison": {
+    "props": {
+      "title": "IndexFlow vs The Market",
+      "rows": [
+        {
+          "label": "Client-Side JS",
+          "market": "Megabytes of bloat",
+          "indexflow": "Zero-JS by default",
+          "isAccent": true
+        },
+        {
+          "label": "Core Web Vitals",
+          "market": "Failing or mediocre",
+          "indexflow": "Perfect 100/100"
+        },
+        {
+          "label": "SEO Approach",
+          "market": "Guesswork & plugins",
+          "indexflow": "Engineering & Strategy"
+        },
+        {
+          "label": "Hosting",
+          "market": "Slow origin servers",
+          "indexflow": "Cloudflare Edge"
+        }
+      ]
+    }
+  },
+  "Workflow": {
+    "props": {
+      "title": "The Path to Dominance",
+      "steps": [
+        {
+          "number": "01",
+          "tag": "Audit",
+          "title": "Technical Discovery",
+          "description": "We reverse-engineer your current setup, identifying performance bottlenecks and indexation blockers."
+        },
+        {
+          "number": "02",
+          "tag": "Strategy",
+          "title": "EEAT & Architecture",
+          "description": "Mapping out the semantic structure, entity relationships, and SvelteKit architecture needed to win."
+        },
+        {
+          "number": "03",
+          "tag": "Execution",
+          "title": "Development & Content",
+          "description": "Building the zero-bloat UI and creating authoritative content that establishes topical supremacy."
+        },
+        {
+          "number": "04",
+          "tag": "Scale",
+          "title": "Monitoring & Growth",
+          "description": "Continuous tracking of rankings, Core Web Vitals, and ongoing strategic refinements."
+        }
+      ]
+    }
+  },
+  "FAQ": {
+    "props": {
+      "title": "Common Inquiries",
+      "questions": [
+        {
+          "q": "Why SvelteKit SSG instead of Next.js or WordPress?",
+          "a": "SvelteKit Static Site Generation (SSG) compiles HTML at build time with minimal to zero client-side JavaScript. This eliminates the hydration overhead found in Next.js and the database latency of WordPress, guaranteeing instantaneous load times that Google rewards."
+        },
+        {
+          "q": "How do you ensure EEAT compliance?",
+          "a": "We structure your content to highlight credentials, cite authoritative sources, implement author schemas, and establish clear entity relationships, demonstrating undeniable expertise and trustworthiness to search evaluators."
+        },
+        {
+          "q": "What happens if we need third-party scripts like Google Analytics?",
+          "a": "We strictly enforce Partytown compliance for all trackers. They run in a background web worker, ensuring they never block the main thread or degrade your Core Web Vitals."
+        }
+      ]
+    }
+  },
+  "Pricing": {
+    "props": {
+      "title": "Partnership Plans",
+      "plans": [
+        {
+          "name": "Audit & Strategy",
+          "price": "$2,500",
+          "features": [
+            "Technical SEO Audit",
+            "Performance Baseline Report",
+            "EEAT Content Gap Analysis",
+            "Architecture Action Plan"
+          ],
+          "buttonText": "Get Started"
+        },
+        {
+          "name": "Full Overhaul",
+          "price": "$10,000+",
+          "features": [
+            "SvelteKit Replatforming",
+            "Zero-JS Implementation",
+            "Complete Schema Markup",
+            "Migration Execution",
+            "1 Month Post-Launch Support"
+          ],
+          "buttonText": "Schedule Consult",
+          "isPopular": true
+        }
+      ]
+    }
+  },
+  "Cta": {
+    "props": {
+      "title": "Ready to outrank the competition?",
+      "subtitle": "Stop losing traffic to slower, less authoritative sites."
+    }
+  },
+  "CallbackForm": {
+    "props": {
+      "title": "Start Your<br> Transformation",
+      "description": "Fill out the form below. We'll analyze your current architecture and schedule a deep-dive technical consultation."
+    }
+  },
+  "Disclaimer": {
+    "props": {
+      "title": "Strict Engineering Standards",
+      "message": "IndexFlow adheres strictly to white-hat SEO and zero-bloat engineering principles. We do not engage in PBNs, link farming, or any manipulative practices that violate search engine guidelines."
     }
   }
 }
