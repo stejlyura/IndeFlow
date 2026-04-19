@@ -7,9 +7,8 @@ export interface PageSection {
 }
 
 export interface PageConfig {
-    theme: Theme;
-    metaTitle: string;
-    sections: PageSection[];
+    design?: string;
+    [key: string]: any; // Components like Hero, Stats, etc.
 }
 
 export interface PricingPlan {

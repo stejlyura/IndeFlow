@@ -1,6 +1,18 @@
 <script lang="ts">
     import type { ComparisonRow } from '$lib/types';
-    let { title = "Comparison", rows = [] } = $props<{ title?: string, rows?: ComparisonRow[] }>();
+    let { 
+        title = "Comparison", 
+        rows = [],
+        header_1 = "Metric",
+        header_2 = "Typical Solution",
+        header_3 = "IndexFlow (Modern Stack)"
+    } = $props<{ 
+        title?: string, 
+        rows?: ComparisonRow[],
+        header_1?: string,
+        header_2?: string,
+        header_3?: string
+    }>();
 </script>
 
 <section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card);">
@@ -10,9 +22,9 @@
             <table class="w-full min-w-[700px] border-collapse bg-white text-black">
                 <thead>
                     <tr class="border-b" style="border-color: var(--border-color);">
-                        <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">Критерий</th>
-                        <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">Рыночное Решение</th>
-                        <th class="py-10 px-8 text-left text-xs font-black uppercase tracking-widest" style="background-color: #f8f9fa;">IndexFlow Engine</th>
+                        <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">{header_1}</th>
+                        <th class="py-10 px-8 text-left text-[10px] uppercase opacity-40">{header_2}</th>
+                        <th class="py-10 px-8 text-left text-xs font-black uppercase tracking-widest" style="background-color: #f8f9fa;">{header_3}</th>
                     </tr>
                 </thead>
                 <tbody class="text-sm">

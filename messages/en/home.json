@@ -2,9 +2,9 @@
   "design": "Blueprint",
   "Hero": {
     "props": {
-      "title": "Unrivaled SEO",
-      "highlight": "& Web Architecture",
-      "description": "IndexFlow engineers high-performance platforms recognized by Google as industry benchmarks. Zero bloat. 100% performance.",
+      "title": "IndexFlow: Web Development",
+      "highlight": "That Works For Your Business",
+      "description": "IndexFlow is a high-performance digital agency specializing in cutting-edge web development and technical SEO. We bridge the gap between complex fullstack engineering and search engine dominance.",
       "primary_cta": {
         "label": "Get Started",
         "href": "#contact"
@@ -14,9 +14,33 @@
         "href": "#portfolio"
       },
       "seo": {
-        "title": "IndexFlow | Elite SEO & High-Performance Web Architecture",
-        "description": "IndexFlow provides elite SEO strategies and SvelteKit architectures designed for unparalleled performance, EEAT compliance, and search dominance.",
-        "keywords": "SEO agency, high performance web architecture, SvelteKit, EEAT, technical SEO, zero JS, fast websites"
+        "title": "IndexFlow | High-Performance Web Development & Technical SEO",
+        "description": "IndexFlow bridges the gap between complex fullstack engineering and search engine dominance with high-performance architectures and expert SEO.",
+        "keywords": "SEO agency, technical SEO, SvelteKit, high performance web, zero JS, Core Web Vitals, Google Indexing API",
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "IndexFlow Agency",
+          "url": "https://indexflow.agency",
+          "logo": "https://indexflow.agency/logo.png",
+          "description": "High-performance digital agency specializing in SvelteKit development and technical SEO.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "EU",
+            "addressRegion": "Europe"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "hello@indexflow.agency",
+            "availableLanguage": ["English", "Ukrainian", "Russian"]
+          },
+          "sameAs": [
+            "https://twitter.com/indexflow",
+            "https://github.com/indexflow",
+            "https://linkedin.com/company/indexflow"
+          ]
+        }
       }
     }
   },
@@ -55,86 +79,155 @@
   },
   "About": {
     "props": {
-      "title": "Authoritative SEO Engineering",
-      "subtitle": "We don't just optimize. We architect for search dominance.",
-      "p1": "At IndexFlow, we merge cutting-edge SvelteKit static site generation with deeply researched EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) principles.",
-      "p2": "Our team consists of veteran SEO specialists and performance engineers who understand that modern search engines reward technically flawless, hyper-fast user experiences.",
-      "p3": "Every line of code and every piece of content is engineered to rank. We deliver verifiable results, zero-JS architectures by default, and strategies that outlast algorithm updates."
+      "title": "Why Your Current Site (WP/Joomla) is the Weakest Link",
+      "subtitle": "Most websites today are overloaded with unnecessary code.",
+      "p1": "In a world where Google evaluates sites based on EEAT (Expertise, Experience, Authoritativeness, Trustworthiness) criteria, standard solutions are no longer enough. While competitors offer heavy WordPress templates, IndexFlow builds high-tech digital assets.",
+      "items": [
+        "Slow Down: Bloated JS kills Lighthouse scores.",
+        "Index Poorly: Google bots waste 'crawl budget' reading garbage code.",
+        "Crash: Standard hosting cannot handle traffic spikes, and manual plugin updates break the site.",
+        "Cost More: Hidden fees for plugins, heavy hosting, and constant vulnerability patches."
+      ],
+      "p2": "Our signature is maximum performance. We use a modern Headless stack (Svelte, Next.js) so your site flies."
     }
   },
   "ServicesExt": {
     "props": {
-      "title": "Our Core Competencies",
+      "title": "Killer Features & Core Competencies",
       "services": [
         {
-          "title": "Technical SEO Audits",
-          "desc": "Deep architectural analysis to eliminate crawl errors, optimize indexation, and resolve complex structural issues."
+          "title": "Instant Search Indexing",
+          "desc": "Integration with Google Indexing API ensures your pages appear in search results within minutes, not weeks. Perfect for news, e-commerce, and fast-moving markets."
         },
         {
-          "title": "Performance Engineering",
-          "desc": "Rebuilding web platforms using SvelteKit SSG and Edge Networks for sub-100ms load times and perfect Core Web Vitals."
+          "title": "Lighthouse Green Zone",
+          "desc": "We push sites into the perfect 100/100 green zone. High speed directly reduces ad CPC and improves user retention across all devices."
         },
         {
-          "title": "EEAT Strategy & Content",
-          "desc": "Establishing brand authority and trust through expertly vetted, search-intent optimized semantic content."
+          "title": "Global Edge Delivery",
+          "desc": "Deployment on Vercel and Cloudflare allows content delivery from the data center closest to the user, ensuring sub-50ms TTFB worldwide."
         },
         {
-          "title": "Migration & Relaunch",
-          "desc": "Risk-free site migrations ensuring traffic retention, structured data continuity, and zero downtime."
+          "title": "Enterprise Security",
+          "desc": "DDoS and hack protection at the AWS and Cloudflare WAF level. Zero-downtime deployments via configured CI/CD pipelines."
         }
-      ]
+      ],
+      "seo": {
+        "jsonLd": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "High-Performance Web Development",
+            "description": "Building lightning-fast, SEO-optimized web applications using SvelteKit and modern Headless architectures.",
+            "provider": {
+              "@type": "Organization",
+              "name": "IndexFlow Agency"
+            },
+            "areaServed": "Worldwide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Development Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SvelteKit Development"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Zero-JS Architecture Design"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Technical SEO Strategy",
+            "description": "Advanced SEO engineering including Google Indexing API, JSON-LD Schema implementation, and Core Web Vitals optimization.",
+            "provider": {
+              "@type": "Organization",
+              "name": "IndexFlow Agency"
+            },
+            "areaServed": "Worldwide"
+          }
+        ]
+      }
     }
   },
   "Expertise": {
     "props": {
-      "title": "Why IndexFlow is the Standard",
+      "title": "Our Killer Features",
+      "subtitle": "High-performance digital assets designed to win.",
       "items": [
         {
-          "title": "CSS-First Interactions",
-          "description": "We replace heavy JavaScript libraries with native HTML and CSS-first solutions. This provides the same interactivity with zero bundle overhead."
+          "title": "Technical SEO",
+          "description": "Google Indexing API (instant indexing), Lighthouse Green Zone (100/100), and Clean Semantic HTML."
         },
         {
-          "title": "Partytown Integration",
-          "description": "All third-party trackers and analytics are offloaded to web workers. Your main thread remains unblocked for your users."
+          "title": "Infrastructure",
+          "description": "Zero-Downtime Deploy, Global Edge Acceleration (Cloudflare/Vercel), and Enterprise Security (WAF)."
         },
         {
-          "title": "Structured Data",
-          "description": "Comprehensive schema.org markup tailored to your niche, helping search engines understand and feature your content."
+          "title": "Headless Migration",
+          "description": "Migration from WordPress/Joomla, JS optimization, and full security audit."
+        },
+        {
+          "title": "Transparency",
+          "description": "Clean documented code, fixed prices, and no hidden maintenance fees."
         }
       ]
     }
   },
   "Comparison": {
     "props": {
-      "title": "IndexFlow vs The Market",
+      "title": "Why IndexFlow Outperforms Legacy CMS",
+      "header_1": "Feature",
+      "header_2": "Typical Agency (Legacy)",
+      "header_3": "IndexFlow (Modern Stack)",
       "rows": [
         {
-          "label": "Client-Side JS",
-          "market": "Megabytes of bloat",
-          "indexflow": "Zero-JS by default",
+          "label": "Technology",
+          "market": "WordPress / PHP",
+          "indexflow": "SvelteKit / Next.js / React",
           "isAccent": true
         },
         {
-          "label": "Core Web Vitals",
-          "market": "Failing or mediocre",
-          "indexflow": "Perfect 100/100"
+          "label": "Speed (Lighthouse)",
+          "market": "40-60 (Red Zone)",
+          "indexflow": "95-100 (Green Zone)"
         },
         {
-          "label": "SEO Approach",
-          "market": "Guesswork & plugins",
-          "indexflow": "Engineering & Strategy"
+          "label": "JS Payload",
+          "market": "Heavy Scripts (Bloated JS)",
+          "indexflow": "Zero / Low JS Architecture"
         },
         {
-          "label": "Hosting",
-          "market": "Slow origin servers",
-          "indexflow": "Cloudflare Edge"
+          "label": "Indexing",
+          "market": "Waiting weeks for bots",
+          "indexflow": "Indexing API (Instant)"
+        },
+        {
+          "label": "Infrastructure",
+          "market": "Cheap shared hosting",
+          "indexflow": "Edge (Vercel / AWS / Cloudflare)"
+        },
+        {
+          "label": "Transparency",
+          "market": "Hidden maintenance fees",
+          "indexflow": "Fixed price, clean code"
         }
       ]
     }
   },
   "Workflow": {
     "props": {
-      "title": "The Path to Dominance",
+      "title": "The Path to Topical Supremacy",
       "steps": [
         {
           "number": "01",
@@ -165,47 +258,83 @@
   },
   "FAQ": {
     "props": {
-      "title": "Common Inquiries",
+      "title": "Expert Insights & FAQ",
       "questions": [
         {
           "q": "Why SvelteKit SSG instead of Next.js or WordPress?",
           "a": "SvelteKit Static Site Generation (SSG) compiles HTML at build time with minimal to zero client-side JavaScript. This eliminates the hydration overhead found in Next.js and the database latency of WordPress, guaranteeing instantaneous load times that Google rewards."
         },
         {
-          "q": "How do you ensure EEAT compliance?",
-          "a": "We structure your content to highlight credentials, cite authoritative sources, implement author schemas, and establish clear entity relationships, demonstrating undeniable expertise and trustworthiness to search evaluators."
+          "q": "How does the Google Indexing API benefit my business?",
+          "a": "Unlike traditional sitemaps where you wait for Google to crawl your site, the Indexing API allows us to notify Google of new or updated pages instantly. This leads to near-real-time indexation, which is a massive competitive advantage."
         },
         {
-          "q": "What happens if we need third-party scripts like Google Analytics?",
-          "a": "We strictly enforce Partytown compliance for all trackers. They run in a background web worker, ensuring they never block the main thread or degrade your Core Web Vitals."
+          "q": "What is 'Zero JS' and why is it important for SEO?",
+          "a": "Zero JS means the page is functional without needing to download or execute heavy JavaScript. Since Google uses a 'second pass' for rendering JS-heavy sites, Zero JS ensures your content is indexed immediately and accurately on the first crawl."
+        },
+        {
+          "q": "How do you ensure security on a Headless stack?",
+          "a": "By separating the frontend from the backend (Headless), we eliminate common attack vectors like SQL injection and cross-site scripting (XSS) prevalent in WordPress. We also use Cloudflare WAF for enterprise-grade protection."
+        },
+        {
+          "q": "Do you offer migration from WordPress or Joomla?",
+          "a": "Yes, we specialize in 'heart transplants'—moving your content and SEO authority from heavy legacy CMS platforms to fast modern engines without losing any ranking positions."
+        },
+        {
+          "q": "How do you handle third-party scripts like Google Analytics?",
+          "a": "We strictly enforce Partytown compliance. Scripts run in a background web worker, ensuring they never block the main thread or degrade your Core Web Vitals scores."
         }
-      ]
+      ],
+      "seo": {
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why SvelteKit SSG instead of Next.js or WordPress?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SvelteKit SSG eliminates hydration overhead and database latency, guaranteeing instantaneous load times."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the Google Indexing API benefit my business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It allows near-real-time indexation by notifying Google of updates instantly."
+              }
+            }
+          ]
+        }
+      }
     }
   },
   "Pricing": {
     "props": {
-      "title": "Partnership Plans",
+      "title": "Investment Tiers",
       "plans": [
         {
-          "name": "Audit & Strategy",
+          "name": "Technical Audit",
           "price": "$2,500",
           "features": [
-            "Technical SEO Audit",
-            "Performance Baseline Report",
-            "EEAT Content Gap Analysis",
+            "Lighthouse Performance Audit",
+            "Technical SEO Roadmask",
+            "EEAT Content Analysis",
             "Architecture Action Plan"
           ],
-          "buttonText": "Get Started"
+          "buttonText": "Start Audit"
         },
         {
           "name": "Full Overhaul",
           "price": "$10,000+",
           "features": [
             "SvelteKit Replatforming",
-            "Zero-JS Implementation",
-            "Complete Schema Markup",
-            "Migration Execution",
-            "1 Month Post-Launch Support"
+            "Zero-JS Architecture",
+            "Indexing API Integration",
+            "Global Edge Deployment",
+            "1 Month Priority Support"
           ],
           "buttonText": "Schedule Consult",
           "isPopular": true
@@ -216,7 +345,7 @@
   "Cta": {
     "props": {
       "title": "Ready to outrank the competition?",
-      "description": "Stop losing traffic to slower, less authoritative sites.",
+      "description": "Stop losing traffic to slower, less authoritative sites. Let's build your high-tech digital asset today.",
       "buttonText": "Get in Touch"
     }
   },
@@ -232,4 +361,4 @@
       "message": "IndexFlow adheres strictly to white-hat SEO and zero-bloat engineering principles. We do not engage in PBNs, link farming, or any manipulative practices that violate search engine guidelines."
     }
   }
-}
+}

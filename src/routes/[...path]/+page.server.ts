@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
-import type { PageConfig } from '$lib/types';
+import { loadPageContent } from '$lib/server/content';
 
 export const entries: EntryGenerator = () => {
 	// Dynamically generate entries based on JSON files in /messages/{lang}/
@@ -9,7 +9,6 @@ export const entries: EntryGenerator = () => {
 	const locales = ['en', 'ru', 'uk'];
 
 	for (const file of Object.keys(modules)) {
-		// e.g., /messages/en/home.json or /messages/en/technical.json
 		const cleanPath = file.replace('/messages/', '').replace('.json', '');
 		const parts = cleanPath.split('/');
 		
@@ -17,21 +16,17 @@ export const entries: EntryGenerator = () => {
 			const lang = parts[0];
 			const page = parts.slice(1).join('/');
 
-			if (page === 'common') continue; // Skip common translations
+			if (page === 'common') continue; 
 
-			// Generate path: lang/page
 			paths.push({ path: `${lang}/${page}` });
 
-			// If it's the home page, also allow just the language code
 			if (page === 'home') {
 				paths.push({ path: `${lang}` });
 			}
 		}
 	}
 
-	// Add root path
 	paths.push({ path: '' });
-
 	return paths;
 };
 
@@ -44,12 +39,10 @@ export const load: PageServerLoad = async ({ params }) => {
 	const knownRegions = ['europe', 'cis', 'asia', 'usa', 'eu'];
 
 	if (pathParts.length > 0) {
-		// Ignore legacy region prefixes
 		if (knownRegions.includes(pathParts[0])) {
 			pathParts.shift();
 		}
 		
-		// Parse language
 		if (pathParts.length > 0 && ['en', 'ru', 'uk'].includes(pathParts[0])) {
 			lang = pathParts.shift()!;
 		}
@@ -60,27 +53,17 @@ export const load: PageServerLoad = async ({ params }) => {
 	}
 
 	try {
-		const modules = import.meta.glob('/messages/**/*.json');
-		let importPath = `/messages/${lang}/${page}.json`;
+		const pageConfig = await loadPageContent(lang, page);
 		
-		if (!modules[importPath]) {
-			console.warn(`Module ${importPath} not found, falling back to English`);
-			importPath = `/messages/en/${page}.json`;
-		}
-		
-		if (!modules[importPath]) {
-			throw error(404, `Page content not found for ${page}`);
-		}
-		
-		const data = await modules[importPath]() as { default: PageConfig };
 		return {
-			pageConfig: data.default,
+			pageConfig,
 			lang,
-			region: 'europe' // Default region for the new structure
+			region: 'europe' 
 		};
 	} catch (err) {
 		console.error(`Error loading page config for lang: ${lang}, page: ${page}`, err);
 		throw error(404, 'Not found');
 	}
 };
+
 

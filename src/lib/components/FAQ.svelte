@@ -26,6 +26,7 @@
                 <details class="group border-b border-[var(--border-color)]">
                     <summary
                         class="w-full flex justify-between items-center py-10 text-sm font-bold uppercase tracking-[0.2em] text-left cursor-pointer list-none appearance-none"
+                        aria-expanded="false"
                     >
                         <span>{item.q}</span>
                         <span

@@ -1,0 +1,22 @@
+name = "indexflow-agency"
+pages_build_output_dir = ".svelte-kit/output/client"
+
+[vars]
+NODE_VERSION = "18"
+
+[[redirects]]
+from = "/"
+to = "/en"
+status = 301
+
+# Cloudflare Edge Caching Rules
+# These will be enforced at the edge level for sub-50ms TTFB
+[[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "interest-cohort=()"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+Cache-Control = "public, max-age=3600, s-maxage=31536000"

@@ -9,7 +9,7 @@
             <p class="uppercase text-[10px] tracking-[0.5em] mb-16 opacity-60">{description}</p>
         </div>
         <div class="p-8 md:p-12 sharp border bg-zinc-950 text-white border-zinc-800">
-            <form class="space-y-12" onsubmit={(e) => e.preventDefault()}>
+            <form class="space-y-12" id="callback-form">
                 <div class="grid md:grid-cols-2 gap-10">
                     <input type="text" placeholder="YOUR NAME" required class="input-premium w-full text-xs uppercase font-bold" aria-label="Your Name">
                     <input type="tel" placeholder="PHONE" required class="input-premium w-full text-xs uppercase font-bold" aria-label="Phone Number">

@@ -27,7 +27,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {#each items as item}
                         <div class="space-y-2">
-                            <h4 class="font-bold uppercase text-xs tracking-widest">{item.title}</h4>
+                            <h3 class="font-bold uppercase text-xs tracking-widest">{item.title}</h3>
                             <p class="text-xs opacity-60">{item.description}</p>
                         </div>
                     {/each}
