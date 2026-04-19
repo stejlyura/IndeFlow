@@ -11,8 +11,32 @@ export interface SeoSettings {
     [key: string]: any;
 }
 
+// Extract seo properties from the new JSON format
+function extractSeoFromConfig(config: any): SeoSettings {
+    if (!config || typeof config !== 'object') return {};
+    
+    const seo: SeoSettings = {};
+    for (const key of Object.keys(config)) {
+        if (config[key]?.props?.seo) {
+            Object.assign(seo, config[key].props.seo);
+        }
+    }
+    return seo;
+}
+
 // Функция для генерации всевозможных SEO настроек с плейсхолдерами
-export function generateSeoConfig(custom?: SeoSettings) {
+export function generateSeoConfig(customOrConfig?: SeoSettings | Record<string, any>) {
+    // If it's a pageConfig (dictionary of components), extract seo
+    let custom: SeoSettings = {};
+    if (customOrConfig) {
+        // If it looks like a component config with props
+        if (Object.values(customOrConfig).some(v => typeof v === 'object' && v !== null && 'props' in v)) {
+            custom = extractSeoFromConfig(customOrConfig);
+        } else {
+            custom = customOrConfig as SeoSettings;
+        }
+    }
+
     return {
         title: custom?.title || 'PLACEHOLDER_META_TITLE',
         description: custom?.description || 'PLACEHOLDER_META_DESCRIPTION',
@@ -56,3 +80,4 @@ export function generateSeoConfig(custom?: SeoSettings) {
         ]
     };
 }
+

@@ -1,0 +1,30 @@
+{
+  "Hero": {
+    "props": {
+      "title": "Digital Flow",
+      "subtitle": "IndexFlow designs architecture that Google recognizes as a benchmark.",
+      "seo": {
+        "title": "IndexFlow - High Performance Web Architecture",
+        "description": "IndexFlow designs architecture that Google recognizes as a benchmark."
+      }
+    }
+  },
+  "Stats": {
+    "props": {
+      "items": [
+        {
+          "value": "100%",
+          "label": "Performance"
+        },
+        {
+          "value": "Zero",
+          "label": "JS Overhead"
+        }
+      ],
+      "seo": {
+        "title": "Performance Stats",
+        "description": "Our architecture achieves 100% performance with zero JS overhead."
+      }
+    }
+  }
+}

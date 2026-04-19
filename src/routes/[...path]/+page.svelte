@@ -8,7 +8,7 @@
 		Workflow, 
 		Disclaimer, 
 		Pricing, 
-		CallbackForm 
+		CallbackForm
 	} from '$lib';
 
 	let { data }: { data: PageData } = $props();
@@ -26,14 +26,10 @@
 	};
 </script>
 
-<svelte:head>
-	<title>{config.metaTitle}</title>
-</svelte:head>
-
 <!-- Map the sections from the JSON configuration to the CSS-only components -->
-{#each config.sections as section (section.id)}
-	{@const Component = componentMap[section.type]}
-	{#if Component}
-		<Component {...section.data} />
+{#each Object.entries(config) as [componentName, componentData] (componentName)}
+	{@const Component = componentMap[componentName]}
+	{#if Component && componentData?.props}
+		<Component {...componentData.props} />
 	{/if}
 {/each}
