@@ -33,7 +33,11 @@
             "@type": "ContactPoint",
             "contactType": "customer service",
             "email": "hello@indexflow.agency",
-            "availableLanguage": ["English", "Ukrainian", "Russian"]
+            "availableLanguage": [
+              "English",
+              "Ukrainian",
+              "Russian"
+            ]
           },
           "sameAs": [
             "https://twitter.com/indexflow",
@@ -208,11 +212,6 @@
           "indexflow": "Zero / Low JS Architecture"
         },
         {
-          "label": "Indexing",
-          "market": "Waiting weeks for bots",
-          "indexflow": "Indexing API (Instant)"
-        },
-        {
           "label": "Infrastructure",
           "market": "Cheap shared hosting",
           "indexflow": "Edge (Vercel / AWS / Cloudflare)"
@@ -361,4 +360,4 @@
       "message": "IndexFlow adheres strictly to white-hat SEO and zero-bloat engineering principles. We do not engage in PBNs, link farming, or any manipulative practices that violate search engine guidelines."
     }
   }
-}
+}
