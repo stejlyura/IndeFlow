@@ -1,8 +1,18 @@
 {
+  "design": "Blueprint",
   "Hero": {
     "props": {
-      "title": "Unrivaled SEO & Web Architecture",
-      "subtitle": "IndexFlow engineers high-performance platforms recognized by Google as industry benchmarks. Zero bloat. 100% performance.",
+      "title": "Unrivaled SEO",
+      "highlight": "& Web Architecture",
+      "description": "IndexFlow engineers high-performance platforms recognized by Google as industry benchmarks. Zero bloat. 100% performance.",
+      "primary_cta": {
+        "label": "Get Started",
+        "href": "#contact"
+      },
+      "secondary_cta": {
+        "label": "Our Work",
+        "href": "#portfolio"
+      },
       "seo": {
         "title": "IndexFlow | Elite SEO & High-Performance Web Architecture",
         "description": "IndexFlow provides elite SEO strategies and SvelteKit architectures designed for unparalleled performance, EEAT compliance, and search dominance.",
@@ -206,7 +216,8 @@
   "Cta": {
     "props": {
       "title": "Ready to outrank the competition?",
-      "subtitle": "Stop losing traffic to slower, less authoritative sites."
+      "description": "Stop losing traffic to slower, less authoritative sites.",
+      "buttonText": "Get in Touch"
     }
   },
   "CallbackForm": {

@@ -1,10 +1,12 @@
 <script lang="ts">
     let {
         title = '',
-        steps = []
+        steps = [],
+        id = 'workflow'
     }: {
         title?: string;
         steps?: { number: string; tag: string; title: string; description: string }[];
+        id?: string;
     } = $props();
 </script>
 
@@ -26,7 +28,7 @@
     }
 </style>
 
-<section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card); animation-delay: 0.2s;" id="services">
+<section class="py-24 px-4 md:px-8 bg-opacity-30 reveal" style="background-color: var(--bg-card); animation-delay: 0.2s;" {id}>
     <div class="container mx-auto">
         <h2 class="text-4xl md:text-7xl font-black mb-24 uppercase italic text-center tracking-tighter">
             {title}

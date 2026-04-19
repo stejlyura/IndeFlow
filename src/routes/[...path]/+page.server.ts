@@ -38,20 +38,11 @@ export const entries: EntryGenerator = () => {
 };
 
 export const load: PageServerLoad = async ({ params }) => {
-	// Принудительный редирект с корня на /eu/en
-	if (!params.path) {
-		throw redirect(301, '/eu/en');
-	}
-
-	// Игнорируем запросы к служебным скриптам (Partytown) и файлам (favicon.ico и т.д.)
-	if (params.path && (params.path.includes('.') || params.path.startsWith('~'))) {
-		throw error(404, 'Not found');
-	}
+	const pathParts = params.path ? params.path.split('/').filter(Boolean) : [];
 
 	let region = 'europe';
 	let lang = 'en';
 	let page = 'home';
-	const pathParts = params.path ? params.path.split('/').filter(Boolean) : [];
 
 	// Определяем известные регионы (включая алиас 'eu')
 	const knownRegions = ['europe', 'cis', 'asia', 'usa', 'eu'];

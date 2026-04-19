@@ -2,27 +2,27 @@
     import type { ExpertiseItem } from '$lib/types';
 
     let {
-        title1 = '',
-        title2 = '',
-        mainText = '',
-        items = []
+        title = '',
+        subtitle = '',
+        items = [],
+        id = 'expertise'
     } = $props<{
-        title1?: string;
-        title2?: string;
-        mainText?: string;
+        title?: string;
+        subtitle?: string;
         items?: ExpertiseItem[];
+        id?: string;
     }>();
 </script>
 
-<section class="py-24 px-4 md:px-8 bg-accent-section reveal" style="animation-delay: 0.3s;" id="portfolio">
+<section class="py-24 px-4 md:px-8 bg-accent-section reveal" style="animation-delay: 0.3s;" {id}>
     <div class="container mx-auto">
         <div class="grid lg:grid-cols-2 gap-20 items-center">
             <div>
                 <h2 class="text-4xl md:text-7xl font-black uppercase italic mb-8 tracking-tighter leading-none">
-                    {title1} <br> {title2}
+                    {@html title}
                 </h2>
                 <p class="text-lg md:text-xl opacity-80 leading-relaxed mb-12 italic">
-                    {mainText}
+                    {subtitle}
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {#each items as item}
