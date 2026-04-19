@@ -1,6 +1,7 @@
-import { error } from '@sveltejs/kit';
+import { error, type Actions } from '@sveltejs/kit';
 import type { PageServerLoad, EntryGenerator } from './$types';
 import { loadPageContent } from '$lib/server/content';
+import { TELEGRAM_TOKEN, MY_CHAT_ID } from '$env/static/private';
 
 export const entries: EntryGenerator = () => {
 	// Dynamically generate entries based on JSON files in /messages/{lang}/
@@ -15,7 +16,7 @@ export const entries: EntryGenerator = () => {
 		if (parts.length >= 2) {
 			const lang = parts[0];
 			const page = parts.slice(1).join('/');
-
+			
 			if (page === 'common') continue; 
 
 			paths.push({ path: `${lang}/${page}` });
@@ -65,5 +66,4 @@ export const load: PageServerLoad = async ({ params }) => {
 		throw error(404, 'Not found');
 	}
 };
-
 

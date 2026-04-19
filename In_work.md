@@ -52,3 +52,11 @@ IndexFlow redefines the stack with a **Zero JS philosophy** and a **JSON-oriente
 
 **Authority & Transparency**
 We believe in absolute transparency. No hidden "maintenance fees" or "security plugin" subscriptions. IndexFlow is built for experts by experts, focusing on technical SEO excellence and infrastructure reliability that scales with your business.
+
+---
+
+
+---
+
+
+При сабмит открывается апи {"type":"success","success":true} сделай чтобы оно отправлялось и не перезагружалось или не открывалось что-то другое так же настрой чтьбы нельзя было спамить заявками через бота и на стороне сервера тоже сделай проверку
