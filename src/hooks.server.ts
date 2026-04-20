@@ -36,10 +36,11 @@ export const handle: Handle = async ({ event, resolve }) => {
         // Content Security Policy
         response.headers.set('Content-Security-Policy', 
             "default-src 'self'; " +
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; " +
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com; " +
             "style-src 'self' 'unsafe-inline'; " +
             "img-src 'self' data: https://www.google-analytics.com; " +
-            "connect-src 'self' https://www.google-analytics.com;"
+            "connect-src 'self' https://www.google-analytics.com https://challenges.cloudflare.com; " +
+            "frame-src https://challenges.cloudflare.com;"
         );
 
         return response;

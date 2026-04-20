@@ -53,6 +53,11 @@ export const load: PageServerLoad = async ({ params }) => {
 		}
 	}
 
+	// Skip page generation for static assets or partytown
+	if (page.startsWith('~partytown') || page.includes('.')) {
+		throw error(404, 'Not found');
+	}
+
 	try {
 		const pageConfig = await loadPageContent(lang, page);
 		

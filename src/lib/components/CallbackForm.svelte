@@ -9,6 +9,10 @@
     });
 </script>
 
+<svelte:head>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</svelte:head>
+
 <section {id} class="py-32 px-4 md:px-8 relative reveal" style="background-color: var(--bg-accent); color: var(--text-accent);">
     <div class="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-24">
         <div>
@@ -59,6 +63,7 @@
                         <label for="description" class="text-[9px] uppercase mb-4 opacity-60">Project Description</label>
                         <textarea id="description" name="Project Description" rows="3" maxlength="200" required placeholder="TELL US ABOUT YOUR PROJECT (MAX 200 CHARACTERS)" class="bg-transparent border-b border-zinc-800 py-3 text-xs uppercase font-bold outline-none resize-none"></textarea>
                     </div>
+                    <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
                     <button type="submit" class="w-full btn-premium py-8 sharp text-[11px] font-black tracking-[0.4em]">
                         SEND REQUEST
                     </button>
