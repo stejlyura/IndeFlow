@@ -5,7 +5,7 @@
         rows = [],
         header_1 = "Metric",
         header_2 = "Typical Solution",
-        header_3 = "IndexFlow (Modern Stack)"
+        header_3 = "IndxFlow (Modern Stack)"
     } = $props<{ 
         title?: string, 
         rows?: ComparisonRow[],
@@ -44,7 +44,7 @@
                             <tr class="border-b {row.isAccent ? 'bg-zinc-50' : ''}" style="border-color: var(--border-color);">
                                 <td class="py-10 px-8 font-bold uppercase">{row.label}</td>
                                 <td class="py-10 px-8 opacity-60">{row.market}</td>
-                                <td class="py-10 px-8 font-black text-2xl tracking-tighter" style="color: var(--primary);">{row.indexflow}</td>
+                                <td class="py-10 px-8 font-black text-2xl tracking-tighter" style="color: var(--primary);">{row.IndxFlow}</td>
                             </tr>
                         {/each}
                     {/if}
@@ -57,3 +57,4 @@
 <style>
     .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 </style>
+

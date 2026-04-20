@@ -22,7 +22,7 @@ export interface PricingPlan {
 export interface ComparisonRow {
     label: string;
     market: string;
-    indexflow: string;
+    IndxFlow: string;
     isAccent?: boolean;
 }
 

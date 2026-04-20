@@ -12,7 +12,7 @@ export interface SeoSettings {
     [key: string]: any;
 }
 
-const SITE_URL = 'https://indexflow.agency';
+const SITE_URL = 'https://indxflow.com';
 const DEFAULT_LANG = 'en';
 const SUPPORTED_LANGS = ['en', 'ru', 'uk']; 
 const REGIONS = ['europe', 'eu', 'cis', 'asia', 'usa'];
@@ -148,12 +148,12 @@ export function generateSeoConfig(
     const orgData = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "IndexFlow Agency",
+        "name": "indxflow.com",
         "url": SITE_URL,
         "logo": `${SITE_URL}/logo.png`,
         "sameAs": [
-            "https://twitter.com/indexflow",
-            "https://github.com/indexflow"
+            "https://twitter.com/IndxFlow",
+            "https://github.com/IndxFlow"
         ]
     };
 
@@ -174,36 +174,36 @@ export function generateSeoConfig(
         : jsonLdList[0];
 
     return {
-        title: custom?.title || 'IndexFlow Agency | Premium Web Development & Automation',
-        description: custom?.description || 'IndexFlow Agency provides high-end web development, automation, and technical SEO services for modern businesses.',
+        title: custom?.title || 'indxflow.com | Premium Web Development & Automation',
+        description: custom?.description || 'indxflow.com provides high-end web development, automation, and technical SEO services for modern businesses.',
         canonical: custom?.canonical || canonicalUrl,
-        keywords: custom?.keywords || 'web development, automation, sveltekit, technical seo, indexflow',
-        author: custom?.author || 'IndexFlow Agency',
+        keywords: custom?.keywords || 'web development, automation, sveltekit, technical seo, IndxFlow',
+        author: custom?.author || 'indxflow.com',
         hreflangs,
         openGraph: {
             type: 'website',
             locale: currentLang === 'ru' ? 'ru_RU' : 'en_US',
             url: `${SITE_URL}/${currentPath.replace(/^\//, '')}`,
-            site_name: 'IndexFlow',
-            title: custom?.ogTitle || custom?.title || 'IndexFlow Agency',
+            site_name: 'IndxFlow',
+            title: custom?.ogTitle || custom?.title || 'indxflow.com',
             description: custom?.ogDescription || custom?.description || 'Premium Web Development & Automation',
             images: [
                 {
                     url: custom?.ogImage || `${SITE_URL}/og-image.jpg`,
                     width: 1200,
                     height: 630,
-                    alt: 'IndexFlow Agency'
+                    alt: 'indxflow.com'
                 }
             ]
         },
         twitter: {
-            handle: custom?.twitterHandle || '@indexflow',
-            site: '@indexflow',
+            handle: custom?.twitterHandle || '@IndxFlow',
+            site: '@IndxFlow',
             cardType: 'summary_large_image',
-            title: custom?.ogTitle || custom?.title || 'IndexFlow Agency',
+            title: custom?.ogTitle || custom?.title || 'indxflow.com',
             description: custom?.ogDescription || custom?.description || 'Premium Web Development & Automation',
             image: custom?.ogImage || `${SITE_URL}/twitter-image.jpg`,
-            imageAlt: 'IndexFlow Agency'
+            imageAlt: 'indxflow.com'
         },
         additionalMetaTags: [
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
@@ -220,5 +220,6 @@ export function generateSeoConfig(
         jsonLd: finalJsonLd
     };
 }
+
 
 

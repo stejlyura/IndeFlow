@@ -13,7 +13,7 @@ export async function POST({ request }) {
                 message += `<b>${key}:</b> ${value}\n`;
             }
         }
-        message += `\n<i>Sent from IndexFlow</i>`;
+        message += `\n<i>Sent from IndxFlow</i>`;
 
         const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
             method: 'POST',
@@ -39,3 +39,4 @@ export async function POST({ request }) {
         return json({ success: false, error: 'Internal server error' }, { status: 500 });
     }
 }
+

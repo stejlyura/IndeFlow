@@ -3,7 +3,7 @@
  * Integrates with AWS CloudFront for high-availability media delivery.
  */
 
-const CLOUDFRONT_DOMAIN = process.env.CLOUDFRONT_DOMAIN || 'https://assets.indexflow.agency';
+const CLOUDFRONT_DOMAIN = process.env.CLOUDFRONT_DOMAIN || 'https://assets.indxflow.com';
 
 /**
  * Returns a CloudFront URL for a given asset path.
@@ -22,3 +22,4 @@ export function getAssetUrl(path: string): string {
     const cleanPath = path.replace(/^\//, '');
     return `${CLOUDFRONT_DOMAIN}/${cleanPath}`;
 }
+

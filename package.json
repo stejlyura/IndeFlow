@@ -1,5 +1,5 @@
 {
-	"name": "indexflow",
+	"name": "IndxFlow",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -14,21 +14,21 @@
 		"build-storybook": "node scripts/sync-stories.js && storybook build"
 	},
 	"devDependencies": {
-		"@builder.io/partytown": "^0.10.3",
-		"@inlang/paraglide-js": "^2.15.2",
-		"@storybook/addon-svelte-csf": "^5.1.2",
-		"@storybook/sveltekit": "^10.3.5",
-		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/adapter-static": "^3.0.10",
-		"@sveltejs/kit": "^2.57.0",
-		"@sveltejs/vite-plugin-svelte": "^7.0.0",
-		"@tailwindcss/vite": "^4.2.2",
-		"@types/node": "^24",
-		"storybook": "^10.3.5",
-		"svelte": "^5.55.2",
-		"svelte-check": "^4.4.6",
-		"tailwindcss": "^4.2.2",
-		"typescript": "^6.0.2",
-		"vite": "^8.0.7"
+		"@builder.io/partytown": "0.10.3",
+		"@inlang/paraglide-js": "2.15.2",
+		"@storybook/addon-svelte-csf": "5.1.2",
+		"@storybook/sveltekit": "10.3.5",
+		"@sveltejs/adapter-auto": "7.0.1",
+		"@sveltejs/adapter-static": "3.0.10",
+		"@sveltejs/kit": "2.57.0",
+		"@sveltejs/vite-plugin-svelte": "7.0.0",
+		"@tailwindcss/vite": "4.2.2",
+		"@types/node": "24",
+		"storybook": "10.3.5",
+		"svelte": "5.55.2",
+		"svelte-check": "4.4.6",
+		"tailwindcss": "4.2.2",
+		"typescript": "6.0.2",
+		"vite": "8.0.7"
 	}
 }

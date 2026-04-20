@@ -5,7 +5,7 @@ import type { PageConfig } from '$lib/types';
 const modules = import.meta.glob('/messages/**/*.json');
 
 /**
- * Content delivery pipeline for IndexFlow.
+ * Content delivery pipeline for IndxFlow.
  * Handles localization, fallbacks, and common data merging.
  */
 export async function loadPageContent(lang: string, page: string): Promise<PageConfig> {
@@ -43,3 +43,4 @@ export async function loadPageContent(lang: string, page: string): Promise<PageC
         throw error(500, 'Internal server error during content loading');
     }
 }
+

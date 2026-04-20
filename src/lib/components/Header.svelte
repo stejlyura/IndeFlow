@@ -24,7 +24,7 @@
             href="/"
             class="text-xl md:text-2xl font-black tracking-tighter uppercase italic z-[130]"
         >
-            INDEX<span style="color: var(--primary);">FLOW</span>
+            INDX<span style="color: var(--primary);">FLOW</span>
         </a>
 
         <!-- Desktop Navigation -->

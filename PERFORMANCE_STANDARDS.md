@@ -1,6 +1,6 @@
-# IndexFlow Performance & JS Optimization Standards
+# IndxFlow Performance & JS Optimization Standards
 
-This document defines the strict performance standards maintained by IndexFlow to ensure 100/100 Lighthouse scores and zero memory leaks.
+This document defines the strict performance standards maintained by IndxFlow to ensure 100/100 Lighthouse scores and zero memory leaks.
 
 ## 1. Zero-JS Architecture (CSR: False)
 All pages are configured with `export const csr = false;` in `+layout.js`.
@@ -27,3 +27,4 @@ Critical assets are preloaded in the `<head>`:
 ## 5. Automated Enforcement
 Performance is guarded by **Lighthouse CI** (`lighthouserc.json`).
 *   **Threshold**: Any PR that drops performance below 95/100 is automatically blocked.
+

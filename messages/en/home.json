@@ -3,9 +3,9 @@
   "design": "Blueprint",
   "Hero": {
     "props": {
-      "title": "IndexFlow: Web Development",
+      "title": "IndxFlow: Web Development",
       "highlight": "That Works For Your Business",
-      "description": "IndexFlow is a high-performance digital agency specializing in cutting-edge web development and technical SEO. We bridge the gap between complex fullstack engineering and search engine dominance.",
+      "description": "IndxFlow is a high-performance digital agency specializing in cutting-edge web development and technical SEO. We bridge the gap between complex fullstack engineering and search engine dominance.",
       "primary_cta": {
         "label": "Get Started",
         "href": "#contact"
@@ -15,15 +15,15 @@
         "href": "#portfolio"
       },
       "seo": {
-        "title": "IndexFlow | High-Performance Web Development & Technical SEO",
-        "description": "IndexFlow bridges the gap between complex fullstack engineering and search engine dominance with high-performance architectures and expert SEO.",
+        "title": "IndxFlow | High-Performance Web Development & Technical SEO",
+        "description": "IndxFlow bridges the gap between complex fullstack engineering and search engine dominance with high-performance architectures and expert SEO.",
         "keywords": "SEO agency, technical SEO, SvelteKit, high performance web, zero JS, Core Web Vitals, Google Indexing API",
         "jsonLd": {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "IndexFlow Agency",
-          "url": "https://indexflow.agency",
-          "logo": "https://indexflow.agency/logo.png",
+          "name": "indxflow.com",
+          "url": "https://indxflow.com",
+          "logo": "https://indxflow.com/logo.png",
           "description": "High-performance digital agency specializing in SvelteKit development and technical SEO.",
           "address": {
             "@type": "PostalAddress",
@@ -33,7 +33,7 @@
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "email": "hello@indexflow.agency",
+            "email": "hello@indxflow.com",
             "availableLanguage": [
               "English",
               "Ukrainian",
@@ -41,9 +41,9 @@
             ]
           },
           "sameAs": [
-            "https://twitter.com/indexflow",
-            "https://github.com/indexflow",
-            "https://linkedin.com/company/indexflow"
+            "https://twitter.com/IndxFlow",
+            "https://github.com/IndxFlow",
+            "https://linkedin.com/company/IndxFlow"
           ]
         }
       }
@@ -86,7 +86,7 @@
     "props": {
       "title": "Why Your Current Site (WP/Joomla) is the Weakest Link",
       "subtitle": "Most websites today are overloaded with unnecessary code.",
-      "p1": "In a world where Google evaluates sites based on EEAT (Expertise, Experience, Authoritativeness, Trustworthiness) criteria, standard solutions are no longer enough. While competitors offer heavy WordPress templates, IndexFlow builds high-tech digital assets.",
+      "p1": "In a world where Google evaluates sites based on EEAT (Expertise, Experience, Authoritativeness, Trustworthiness) criteria, standard solutions are no longer enough. While competitors offer heavy WordPress templates, IndxFlow builds high-tech digital assets.",
       "items": [
         "Slow Down: Bloated JS kills Lighthouse scores.",
         "Index Poorly: Google bots waste 'crawl budget' reading garbage code.",
@@ -126,7 +126,7 @@
             "description": "Building lightning-fast, SEO-optimized web applications using SvelteKit and modern Headless architectures.",
             "provider": {
               "@type": "Organization",
-              "name": "IndexFlow Agency"
+              "name": "indxflow.com"
             },
             "areaServed": "Worldwide",
             "hasOfferCatalog": {
@@ -157,7 +157,7 @@
             "description": "Advanced SEO engineering including Google Indexing API, JSON-LD Schema implementation, and Core Web Vitals optimization.",
             "provider": {
               "@type": "Organization",
-              "name": "IndexFlow Agency"
+              "name": "indxflow.com"
             },
             "areaServed": "Worldwide"
           }
@@ -191,36 +191,36 @@
   },
   "Comparison": {
     "props": {
-      "title": "Why IndexFlow Outperforms Legacy CMS",
+      "title": "Why IndxFlow Outperforms Legacy CMS",
       "header_1": "Feature",
       "header_2": "Typical Agency (Legacy)",
-      "header_3": "IndexFlow (Modern Stack)",
+      "header_3": "IndxFlow (Modern Stack)",
       "rows": [
         {
           "label": "Technology",
           "market": "WordPress / PHP",
-          "indexflow": "SvelteKit / Next.js / React",
+          "IndxFlow": "SvelteKit / Next.js / React",
           "isAccent": true
         },
         {
           "label": "Speed (Lighthouse)",
           "market": "40-60 (Red Zone)",
-          "indexflow": "95-100 (Green Zone)"
+          "IndxFlow": "95-100 (Green Zone)"
         },
         {
           "label": "JS Payload",
           "market": "Heavy Scripts (Bloated JS)",
-          "indexflow": "Zero / Low JS Architecture"
+          "IndxFlow": "Zero / Low JS Architecture"
         },
         {
           "label": "Infrastructure",
           "market": "Cheap shared hosting",
-          "indexflow": "Edge (Vercel / AWS / Cloudflare)"
+          "IndxFlow": "Edge (Vercel / AWS / Cloudflare)"
         },
         {
           "label": "Transparency",
           "market": "Hidden maintenance fees",
-          "indexflow": "Fixed price, clean code"
+          "IndxFlow": "Fixed price, clean code"
         }
       ]
     }
@@ -358,7 +358,7 @@
   "Disclaimer": {
     "props": {
       "title": "Strict Engineering Standards",
-      "message": "IndexFlow adheres strictly to white-hat SEO and zero-bloat engineering principles. We do not engage in PBNs, link farming, or any manipulative practices that violate search engine guidelines."
+      "message": "IndxFlow adheres strictly to white-hat SEO and zero-bloat engineering principles. We do not engage in PBNs, link farming, or any manipulative practices that violate search engine guidelines."
     }
   }
 }

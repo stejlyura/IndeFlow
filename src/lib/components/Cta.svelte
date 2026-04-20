@@ -3,7 +3,7 @@
         title = '',
         description = '',
         buttonText = 'Contact Us',
-        buttonHref = 'mailto:hello@indexflow.agency'
+        buttonHref = 'mailto:hello@indxflow.com'
     } = $props<{
         title?: string;
         description?: string;
@@ -25,3 +25,4 @@
         </a>
     </div>
 </section>
+

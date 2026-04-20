@@ -1,7 +1,7 @@
 import { dev } from '$app/environment';
 
 /**
- * IndexFlow Asset Delivery Utility
+ * IndxFlow Asset Delivery Utility
  * 
  * Automatically switches between local assets (development) and 
  * CloudFront CDN (production) to ensure maximum performance and SEO.
@@ -12,7 +12,7 @@ import { dev } from '$app/environment';
  */
 export function getImageUrl(path: string, options: { width?: number; format?: string } = {}) {
     // Replace with your actual CloudFront distribution domain
-    const CLOUDFRONT_DOMAIN = 'https://assets.indexflow.agency';
+    const CLOUDFRONT_DOMAIN = 'https://assets.indxflow.com';
     
     if (dev) {
         return path;
@@ -26,3 +26,4 @@ export function getImageUrl(path: string, options: { width?: number; format?: st
 
     return url.toString();
 }
+

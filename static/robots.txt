@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indexflow.agency/sitemap.xml
+Sitemap: https://indxflow.com/sitemap.xml
+

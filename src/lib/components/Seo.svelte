@@ -6,7 +6,7 @@
         seo_desc = '',
         seo_keywords = '',
         og_image = '',
-        og_site_name = 'IndexFlow Agency',
+        og_site_name = 'IndxFlow Agency',
         hreflangs = [],
         canonical = '',
         jsonLd = null,
@@ -28,8 +28,8 @@
     const description = $derived(config?.description || seo_desc);
     const keywords = $derived(config?.keywords || seo_keywords);
     const siteName = $derived(config?.openGraph?.site_name || og_site_name);
-    const image = $derived(config?.openGraph?.images?.[0]?.url || og_image || 'https://indexflow.agency/og-image.jpg');
-    const finalCanonical = $derived(config?.canonical || canonical || `https://indexflow.agency${page.url.pathname}`);
+    const image = $derived(config?.openGraph?.images?.[0]?.url || og_image || 'https://indxflow.com/og-image.jpg');
+    const finalCanonical = $derived(config?.canonical || canonical || `https://indxflow.com${page.url.pathname}`);
     const finalHreflangs = $derived(config?.hreflangs || hreflangs || []);
     const finalJsonLd = $derived(config?.jsonLd || jsonLd);
 </script>
@@ -40,11 +40,11 @@
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <meta name="author" content="IndexFlow Agency" />
+    <meta name="author" content="IndxFlow Agency" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://indexflow.agency{page.url.pathname}" />
+    <meta property="og:url" content="https://indxflow.com{page.url.pathname}" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
@@ -52,7 +52,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://indexflow.agency{page.url.pathname}" />
+    <meta property="twitter:url" content="https://indxflow.com{page.url.pathname}" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
@@ -87,3 +87,4 @@
         {@html `<script type="application/ld+json">${JSON.stringify(finalJsonLd)}<\/script>`}
     {/if}
 </svelte:head>
+

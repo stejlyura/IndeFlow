@@ -1,4 +1,4 @@
-name = "indexflow-agency"
+name = "indxflow.com"
 pages_build_output_dir = ".svelte-kit/output/client"
 
 [vars]
@@ -20,3 +20,4 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "interest-cohort=()"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 Cache-Control = "public, max-age=3600, s-maxage=31536000"
+

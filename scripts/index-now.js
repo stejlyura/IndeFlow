@@ -1,12 +1,12 @@
 /**
- * IndexFlow: Google Indexing & IndexNow (Bing/Yandex) Integration Script
+ * IndxFlow: Google Indexing & IndexNow (Bing/Yandex) Integration Script
  * This script can be triggered in CI/CD (GitHub Actions) after a successful build.
  */
 
 async function pingIndexNow(urlList) {
     const key = process.env.INDEXNOW_KEY;
-    const keyLocation = `https://indexflow.agency/${key}.txt`;
-    const host = 'indexflow.agency';
+    const keyLocation = `https://indxflow.com/${key}.txt`;
+    const host = 'indxflow.com';
 
     if (!key) {
         console.log('[IndexNow] Missing INDEXNOW_KEY. Skipping...');
@@ -44,8 +44,8 @@ async function pingGoogle(url) {
 
 // Example usage
 const urlsToPing = [
-    'https://indexflow.agency/en',
-    'https://indexflow.agency/en/technical'
+    'https://indxflow.com/en',
+    'https://indxflow.com/en/technical'
 ];
 
 if (process.env.CI) {
@@ -54,3 +54,4 @@ if (process.env.CI) {
 } else {
     console.log('[Indexing] Running in local mode. No pings sent.');
 }
+

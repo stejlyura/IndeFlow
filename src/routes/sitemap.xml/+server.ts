@@ -4,7 +4,7 @@ import type { RequestHandler } from './$types';
 export const GET: RequestHandler = async () => {
 	// Dynamically generate entries based on existing JSON files in /messages/{lang}/
 	const modules = import.meta.glob('/messages/**/*.json');
-	const baseUrl = 'https://indexflow.agency';
+	const baseUrl = 'https://indxflow.com';
 	const locales = ['en', 'ru', 'uk'];
 	
 	// Map pages to their available locales
@@ -76,4 +76,5 @@ ${urls.join('\n')}
 		}
 	});
 };
+
 

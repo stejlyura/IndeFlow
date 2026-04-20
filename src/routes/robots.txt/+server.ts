@@ -2,7 +2,7 @@ export const prerender = true;
 import type { RequestHandler } from './$types';
 
 /**
- * Dynamically generate robots.txt for IndexFlow.
+ * Dynamically generate robots.txt for IndxFlow.
  * Ensures search engines can find the sitemap and crawl the site efficiently.
  */
 export const GET: RequestHandler = () => {
@@ -11,10 +11,10 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://indexflow.agency
+Host: https://indxflow.com
 
 # Sitemaps
-Sitemap: https://indexflow.agency/sitemap.xml
+Sitemap: https://indxflow.com/sitemap.xml
 `.trim();
 
     return new Response(robots, {
@@ -24,3 +24,4 @@ Sitemap: https://indexflow.agency/sitemap.xml
         }
     });
 };
+

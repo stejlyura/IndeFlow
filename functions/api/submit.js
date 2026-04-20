@@ -22,7 +22,7 @@ export async function onRequestPost(context) {
             const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
             
             // Allow production domain and Cloudflare Pages dev domains
-            const isProduction = hostname.includes('indexflow.agency') || hostname.endsWith('pages.dev');
+            const isProduction = hostname.includes('indxflow.com') || hostname.endsWith('pages.dev');
             
             if (!isLocalhost && !isProduction) {
                 return new Response('Forbidden: Invalid Origin', { status: 403 });
@@ -71,7 +71,7 @@ export async function onRequestPost(context) {
                 message += `<b>${escapeHtml(key)}:</b> ${escapeHtml(value)}\n`;
             }
         }
-        message += `\n<i>Sent from IndexFlow</i>`;
+        message += `\n<i>Sent from IndxFlow</i>`;
 
         // Send to Telegram
         const response = await fetch(`https://api.telegram.org/bot${context.env.TELEGRAM_TOKEN}/sendMessage`, {
@@ -96,3 +96,4 @@ export async function onRequestPost(context) {
         return Response.redirect(new URL('/?error=internal', context.request.url).toString(), 303);
     }
 }
+

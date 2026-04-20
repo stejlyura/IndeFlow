@@ -15,7 +15,7 @@ To recreate this project with the same configuration:
 
 ```sh
 # recreate this project
-npx sv@0.15.1 create --template minimal --types ts --add tailwindcss="plugins:none" paraglide="languageTags:en,uk,ru+demo:no" storybook --install npm indexFlow
+npx sv@0.15.1 create --template minimal --types ts --add tailwindcss="plugins:none" paraglide="languageTags:en,uk,ru+demo:no" storybook --install npm IndxFlow
 ```
 
 ## Developing
@@ -40,3 +40,4 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
